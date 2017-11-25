@@ -36,6 +36,12 @@ gem 'font-awesome-sass'
 # View rendering
 gem 'haml-rails'
 
+# Locales
+gem 'rails-i18n'
+
+# Timezone
+gem 'tzinfo'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
