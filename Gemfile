@@ -21,6 +21,7 @@ gem 'devise'
 
 # Javascript
 gem 'mini_racer'
+gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'turbolinks'
