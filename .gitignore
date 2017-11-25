@@ -10,3 +10,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+# Ignore Dotenv files
+/.env
+/.env.*
