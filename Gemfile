@@ -23,6 +23,14 @@ gem 'turbolinks'
 
 # CSS
 gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
+# Fonts
+gem 'font-awesome-sass'
+
+# View rendering
+gem 'haml-rails'
 
 group :development, :test do
   gem 'capybara'
