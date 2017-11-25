@@ -42,6 +42,9 @@ gem 'rails-i18n'
 # Timezone
 gem 'tzinfo'
 
+# Speedup application loading
+gem 'bootsnap'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

@@ -44,6 +44,8 @@ GEM
     autoprefixer-rails (7.1.6)
       execjs
     bcrypt (3.1.11)
+    bootsnap (1.1.5)
+      msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -129,6 +131,7 @@ GEM
     mini_racer (0.1.14)
       libv8 (~> 5.9)
     minitest (5.10.3)
+    msgpack (1.1.0)
     mysql2 (0.4.10)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -262,6 +265,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bcrypt
+  bootsnap
   bootstrap-sass
   capybara
   capybara-screenshot
