@@ -36,8 +36,25 @@ gem 'font-awesome-sass'
 # View rendering
 gem 'haml-rails'
 
-group :development, :test do
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
+
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'shoulda-context'
+  gem 'pundit-matchers'
+
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+
   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
+
+  # Code coverage
+  gem 'simplecov'
 end
 
 group :development do
