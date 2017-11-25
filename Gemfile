@@ -4,11 +4,11 @@ ruby '2.4.2'
 # Rails
 gem 'rails', '~> 5.1.4'
 
-# Database
-gem 'sqlite3'
-
 # Server
 gem 'puma'
+
+# Database
+gem 'mysql2'
 
 # Javascript
 gem 'mini_racer'
