@@ -4,6 +4,11 @@ ruby '2.4.2'
 # Rails
 gem 'rails', '~> 5.1.4'
 
+# Configuration
+gem 'dotenv-rails'
+gem 'figaro'
+gem 'settingslogic'
+
 # Server
 gem 'puma'
 
