@@ -15,6 +15,10 @@ gem 'puma'
 # Database
 gem 'mysql2'
 
+# Authentication Crypto
+gem 'bcrypt'
+gem 'devise'
+
 # Javascript
 gem 'mini_racer'
 gem 'coffee-rails'
