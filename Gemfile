@@ -37,6 +37,11 @@ gem 'font-awesome-sass'
 # View rendering
 gem 'haml-rails'
 
+# Menus
+gem 'simple-navigation'
+gem 'simple_navigation_bootstrap'
+gem 'rails_bootstrap_navbar'
+
 # Locales
 gem 'rails-i18n'
 

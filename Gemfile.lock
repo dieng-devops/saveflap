@@ -46,6 +46,8 @@ GEM
     bcrypt (3.1.11)
     bootsnap (1.1.5)
       msgpack (~> 1.0)
+    bootstrap-navbar (3.0.0)
+      gem_config (~> 0.3)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -98,6 +100,7 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    gem_config (0.3.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -175,6 +178,9 @@ GEM
     rails-i18n (5.0.4)
       i18n (~> 0.7)
       railties (~> 5.0)
+    rails_bootstrap_navbar (3.0.0)
+      bootstrap-navbar (~> 3.0)
+      rails (>= 3.0.0)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -230,6 +236,10 @@ GEM
     shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    simple-navigation (4.0.5)
+      activesupport (>= 2.3.2)
+    simple_navigation_bootstrap (1.0.1)
+      simple-navigation (~> 4.0)
     simplecov (0.15.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -290,6 +300,7 @@ DEPENDENCIES
   pundit-matchers
   rails (~> 5.1.4)
   rails-i18n
+  rails_bootstrap_navbar
   rspec
   rspec-rails
   sass-rails
@@ -297,6 +308,8 @@ DEPENDENCIES
   shoulda
   shoulda-context
   shoulda-matchers
+  simple-navigation
+  simple_navigation_bootstrap
   simplecov
   spring
   turbolinks

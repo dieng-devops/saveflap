@@ -8,4 +8,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = yield
+    #wrapper
+
+      = navbar container: false, static: :top, style: 'margin-bottom: 0;' do
+        = navbar_header brand: 'Flap!', brand_link: root_path
+        = render_navigation_menu(:topbar_right)
+        .navbar-default.sidebar{ role: 'navigation' }
+          .sidebar-nav.navbar-collapse
+            = render_navigation_menu(:user)
+
+      #page-wrapper
+        .row
+          .col-lg-12
+            = yield
