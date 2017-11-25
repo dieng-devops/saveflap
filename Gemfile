@@ -10,14 +10,14 @@ gem 'sqlite3'
 # Server
 gem 'puma'
 
-# Use SCSS for stylesheets
-gem 'sass-rails'
-
 # Javascript
-gem 'uglifier'
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer'
 gem 'coffee-rails'
+gem 'uglifier'
 gem 'turbolinks'
+
+# CSS
+gem 'sass-rails'
 
 group :development, :test do
   gem 'capybara'
