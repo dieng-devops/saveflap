@@ -8,19 +8,19 @@ gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 
 # Server
-gem 'puma', '~> 3.7'
+gem 'puma'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 
 # Javascript
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 gem 'therubyracer', platforms: :ruby
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
+gem 'coffee-rails'
+gem 'turbolinks'
 
 group :development, :test do
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
 end
 
 group :development do

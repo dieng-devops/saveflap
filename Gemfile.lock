@@ -155,16 +155,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (~> 2.13)
-  coffee-rails (~> 4.2)
-  puma (~> 3.7)
+  capybara
+  coffee-rails
+  puma
   rails (~> 5.1.4)
-  sass-rails (~> 5.0)
+  sass-rails
   spring
   sqlite3
   therubyracer
-  turbolinks (~> 5)
-  uglifier (>= 1.3.0)
+  turbolinks
+  uglifier
 
 RUBY VERSION
    ruby 2.4.2p198
