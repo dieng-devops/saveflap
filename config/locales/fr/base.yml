@@ -1,3 +1,5 @@
 fr:
   text:
-    homepage: Page d'accueil
+    administration: Administration
+    homepage: Accueil
+    homepage_admin: Accueil Admin
