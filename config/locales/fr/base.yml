@@ -10,6 +10,7 @@ fr:
     my_account: Mon compte
     infos: Informations
     change_password: Changer de mot de passe
+    settings: Paramètres
 
   button:
     cancel: Annuler
