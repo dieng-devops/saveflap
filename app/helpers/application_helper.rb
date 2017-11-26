@@ -52,4 +52,11 @@ module ApplicationHelper
     I18n.available_locales.map{ |l| [t("language.name.#{l}"), l] }
   end
 
+
+  def easy_form_for(object, opts = {}, &block)
+    layout = request.xhr? ? :default : :horizontal
+    opts   = opts.reverse_merge(remote: request.xhr?, layout: layout)
+    bootstrap_form_for(object, opts, &block)
+  end
+
 end
