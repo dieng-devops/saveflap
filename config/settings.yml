@@ -7,5 +7,9 @@ db_name:    <%= ENV['DB_NAME'] %>
 db_user:    <%= ENV['DB_USER'] %>
 db_pass:    <%= ENV['DB_PASS'] %>
 
+# Redis
+redis_host: <%= ENV['REDIS_HOST'] %>
+redis_port: <%= ENV['REDIS_PORT'] %>
+
 # Devise config
 session_timeout: <%= ENV['SESSION_TIMEOUT'] %>

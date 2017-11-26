@@ -6,6 +6,15 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+REDIS_DB_MAP = %w[
+  health_check
+  session
+  sidekiq
+  logster
+  cache
+  cable
+]
+
 module Flap
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -25,5 +34,12 @@ module Flap
       g.template_engine :haml
       g.test_framework  :rspec
     end
+
+    # Cache store
+    config.cache_store = :redis_store, { host:       ENV['REDIS_HOST'],
+                                         port:       ENV['REDIS_PORT'],
+                                         db:         REDIS_DB_MAP.index('cache'),
+                                         driver:     :hiredis,
+                                         expires_in: 90.minutes }
   end
 end

@@ -15,6 +15,13 @@ gem 'puma'
 # Database
 gem 'mysql2'
 
+# Redis
+gem 'redis', '~> 3.0'
+gem 'hiredis'
+
+# Sessions and Cache
+gem 'redis-rails'
+
 # Authentication / Crypto
 gem 'bcrypt'
 gem 'devise'
