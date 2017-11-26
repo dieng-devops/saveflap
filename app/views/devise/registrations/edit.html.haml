@@ -1,8 +1,8 @@
-.ibox
-  .ibox-title
-    %h5= t('.change_password')
+.panel.panel-default
+  .panel-heading
+    = icon 'lock', t('text.change_password')
 
-  .ibox-content
+  .panel-body
     = bootstrap_form_for resource,
                          layout: :horizontal, label_col: 'col-md-2', control_col: 'col-md-4',
                          url:    registration_path(resource),
@@ -13,5 +13,5 @@
       = f.password_field :password_confirmation, autocomplete: 'off'
 
       = f.form_group do
-        = f.primary nil, class: 'btn-outline'
-        = f.cancel my_account_path, class: 'btn-outline'
+        = f.button nil, class: 'btn btn-primary btn-outline'
+        = link_to t('button.cancel'), my_account_path, class: 'btn btn-default btn-outline'

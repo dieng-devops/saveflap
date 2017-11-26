@@ -1,0 +1,23 @@
+%h2.page-header= current_user
+
+= easy_form_for @form, url: my_account_path, label_col: 'col-md-4', control_col: 'col-md-8', html: { id: 'my_account' } do |f|
+
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          = icon 'info', t('text.infos')
+          .pull-right
+            = link_to icon('lock', t('text.change_password')), edit_user_registration_path
+
+        .panel-body
+          = f.text_field  :first_name, required: true
+          = f.text_field  :last_name,  required: true
+          = f.email_field :email,      required: true
+
+          = f.select           :language, available_locales
+          = f.time_zone_select :time_zone, nil, { default: 'Paris' }
+
+          = f.form_group do
+            = f.button nil, options_for_spinner_button
+            = link_to t('button.cancel'), root_path, class: 'btn btn-default btn-outline'

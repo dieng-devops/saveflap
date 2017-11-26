@@ -16,6 +16,8 @@ fr:
         email: Adresse email
         first_name: Prénom
         last_name: Nom
+
+        current_password: Mot de passe actuel
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         remember_me: Se souvenir de moi

@@ -5,6 +5,15 @@ Rails.application.routes.draw do
               skip_helpers: [:registrations],
               path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
+  as :user do
+    get   'my/password', to: 'authentication/registrations#edit',   as: 'edit_user_registration'
+    patch 'my/password', to: 'authentication/registrations#update', as: 'user_registration'
+  end
+
+  scope 'my' do
+    match 'account', to: 'my#account', as: 'my_account', via: [:get, :patch]
+  end
+
   namespace :admin do
     root to: 'welcome#index', as: 'root'
 

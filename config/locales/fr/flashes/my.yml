@@ -1,0 +1,6 @@
+fr:
+  flash:
+    my:
+      account:
+        notice: Informations mises à jour avec succès
+        alert: Erreurs lors de la mise à jour des informations

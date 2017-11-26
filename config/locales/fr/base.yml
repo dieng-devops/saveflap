@@ -7,6 +7,9 @@ fr:
     back_to_app: Retour à l'application
     save_in_progress: Sauvegarde en cours...
     logout: Déconnexion
+    my_account: Mon compte
+    infos: Informations
+    change_password: Changer de mot de passe
 
   button:
     cancel: Annuler
