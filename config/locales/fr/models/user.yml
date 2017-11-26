@@ -1,0 +1,12 @@
+fr:
+
+  activerecord:
+    icons:
+      user:
+        one: fa-user
+        other: fa-users
+
+    models:
+      user:
+        one: Utilisateur
+        other: Utilisateurs

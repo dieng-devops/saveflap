@@ -41,4 +41,10 @@ module ApplicationHelper
     end
   end
 
+
+  def get_model_name_for(klass, pluralize: true)
+    count = pluralize ? 2 : 1
+    klass.constantize.model_name.human(count: count)
+  end
+
 end
