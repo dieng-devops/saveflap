@@ -6,3 +6,6 @@ db_port:    <%= ENV['DB_PORT'] %>
 db_name:    <%= ENV['DB_NAME'] %>
 db_user:    <%= ENV['DB_USER'] %>
 db_pass:    <%= ENV['DB_PASS'] %>
+
+# Devise config
+session_timeout: <%= ENV['SESSION_TIMEOUT'] %>

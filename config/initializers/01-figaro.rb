@@ -14,6 +14,10 @@ APPLICATION_CONFIG = {
     DB_PASS
   ),
 
+  devise_config: %w(
+    SESSION_TIMEOUT
+  ),
+
 }.freeze
 
 begin
