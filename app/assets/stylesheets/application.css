@@ -14,6 +14,11 @@
  *= require sb-admin/bootstrap-custom
  *= require sb-admin/metisMenu
  *= require sb-admin/sb-admin-2
+ *= require animate
  *= require_tree .
  *= require_self
  */
+
+#flash-messages {
+  margin-top: 25px;
+}

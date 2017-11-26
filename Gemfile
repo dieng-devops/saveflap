@@ -15,7 +15,7 @@ gem 'puma'
 # Database
 gem 'mysql2'
 
-# Authentication Crypto
+# Authentication / Crypto
 gem 'bcrypt'
 gem 'devise'
 
@@ -42,6 +42,9 @@ gem 'simple-navigation'
 gem 'simple_navigation_bootstrap'
 gem 'rails_bootstrap_navbar'
 
+# Forms style
+gem 'bootstrap_form'
+
 # Locales
 gem 'rails-i18n'
 
@@ -50,6 +53,15 @@ gem 'tzinfo'
 
 # Speedup application loading
 gem 'bootsnap'
+
+# Trailblazer
+gem 'trailblazer-rails'
+
+# Form objects
+gem 'actionform', git: 'https://github.com/jbox-web/actionform.git', require: 'action_form'
+
+# Automatic flash messages
+gem 'responders'
 
 group :test, :development do
   gem 'rspec'

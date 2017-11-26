@@ -1,0 +1,9 @@
+.row
+  .col-md-6
+
+    = bootstrap_form_for [:admin, @form] do |f|
+
+      = f.text_field :email
+
+      = f.button nil, options_for_spinner_button
+      = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'

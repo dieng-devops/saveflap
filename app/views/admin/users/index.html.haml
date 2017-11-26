@@ -1,0 +1,18 @@
+%h1
+  Listing users
+  %small= link_to 'New User', new_admin_user_path
+
+%table.table
+  %thead
+    %tr
+      %th Email
+      %th
+      %th
+
+
+  %tbody
+    - @model.each do |user|
+      %tr
+        %td= user.email
+        %td= link_to 'Edit', edit_admin_user_path(user)
+        %td= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }
