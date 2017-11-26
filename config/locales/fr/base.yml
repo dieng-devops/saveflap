@@ -12,6 +12,7 @@ fr:
     change_password: Changer de mot de passe
     settings: Paramètres
     logster: Logster
+    sidekiq: Sidekiq
 
   button:
     cancel: Annuler

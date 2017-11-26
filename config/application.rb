@@ -35,6 +35,9 @@ module Flap
       g.test_framework  :rspec
     end
 
+    # ActiveJob config
+    config.active_job.queue_adapter = :sidekiq
+
     # Cache store
     config.cache_store = :redis_store, { host:       ENV['REDIS_HOST'],
                                          port:       ENV['REDIS_PORT'],

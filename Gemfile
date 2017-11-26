@@ -79,6 +79,9 @@ gem 'pundit'
 # Live Rails Logs
 gem 'logster'
 
+# Async Jobs
+gem 'sidekiq'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

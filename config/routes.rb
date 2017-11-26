@@ -1,9 +1,12 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root 'welcome#index'
 
   ### All routes below this point should require login or API key ###
   authenticate :user, lambda { |u| u.admin? } do
     mount Logster::Web, at: 'logs'
+    mount Sidekiq::Web, at: 'sidekiq'
   end
 
   devise_for :users, module: 'authentication',
