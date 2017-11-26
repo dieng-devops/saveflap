@@ -47,4 +47,9 @@ module ApplicationHelper
     klass.constantize.model_name.human(count: count)
   end
 
+
+  def available_locales
+    I18n.available_locales.map{ |l| [t("language.name.#{l}"), l] }
+  end
+
 end

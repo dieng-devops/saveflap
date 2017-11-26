@@ -3,7 +3,12 @@
 
     = bootstrap_form_for [:admin, @form] do |f|
 
+      = f.text_field :first_name
+      = f.text_field :last_name
       = f.text_field :email
+
+      = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
+      = f.time_zone_select :time_zone, nil, { default: 'Paris' }
 
       = f.button nil, options_for_spinner_button
       = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'

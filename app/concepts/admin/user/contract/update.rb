@@ -4,7 +4,10 @@ module Admin::User::Contract
     self.main_model = :user
 
     # Real attributes
-    attributes :email, required: false
-
+    attribute :first_name, required: true
+    attribute :last_name,  required: true
+    attribute :email,      required: false
+    attribute :language,   required: true
+    attribute :time_zone,  required: true
   end
 end

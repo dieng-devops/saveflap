@@ -4,9 +4,13 @@ module Admin::User::Contract
     self.main_model = :user
 
     # Real attributes
-    attributes :email,                 required: false
-    attributes :password,              required: false
-    attributes :password_confirmation, required: false
+    attribute :first_name,            required: true
+    attribute :last_name,             required: true
+    attribute :language,              required: true
+    attribute :time_zone,             required: true
+    attribute :email,                 required: false
+    attribute :password,              required: false
+    attribute :password_confirmation, required: false
 
     # Virtual attributes (options)
     attr_accessor :created_password
