@@ -66,6 +66,9 @@ gem 'actionform', git: 'https://github.com/jbox-web/actionform.git', require: 'a
 # Automatic flash messages
 gem 'responders'
 
+# Authorizations
+gem 'pundit'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

@@ -18,6 +18,18 @@ module BaseController
     end
 
 
+    # This method is called in the Admin section of the application.
+    # First we need to check if the visitor is logged.
+    # If not, Devise will authenticate the user and will redirect him
+    # to the desired page in the Admin section.
+    # At that time this method will be triggered a second time and then
+    # we will check if the visitor has the rights to access to the Admin section.
+    def require_admin
+      return unless require_login
+      render_403 unless policy(:admin_zone).show?
+    end
+
+
     protected
 
 

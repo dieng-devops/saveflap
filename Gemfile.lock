@@ -345,6 +345,7 @@ DEPENDENCIES
   page_title_helper
   poltergeist
   puma
+  pundit
   pundit-matchers
   rails (~> 5.1.4)
   rails-i18n
