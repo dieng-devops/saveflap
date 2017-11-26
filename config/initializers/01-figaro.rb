@@ -14,6 +14,11 @@ APPLICATION_CONFIG = {
     DB_PASS
   ),
 
+  redis_config: %w(
+    REDIS_HOST
+    REDIS_PORT
+  ),
+
   devise_config: %w(
     SESSION_TIMEOUT
   ),
