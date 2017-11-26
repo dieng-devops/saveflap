@@ -1,0 +1,17 @@
+.ibox
+  .ibox-title
+    %h5= t('.change_password')
+
+  .ibox-content
+    = bootstrap_form_for resource,
+                         layout: :horizontal, label_col: 'col-md-2', control_col: 'col-md-4',
+                         url:    registration_path(resource),
+                         html:   { method: :patch, id: 'my_password' } do |f|
+
+      = f.password_field :current_password, autocomplete: 'off'
+      = f.password_field :password, autocomplete: 'off'
+      = f.password_field :password_confirmation, autocomplete: 'off'
+
+      = f.form_group do
+        = f.primary nil, class: 'btn-outline'
+        = f.cancel my_account_path, class: 'btn-outline'

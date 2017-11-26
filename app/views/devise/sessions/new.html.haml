@@ -1,0 +1,14 @@
+= bootstrap_form_for resource,
+                     as:  resource_name,
+                     url: session_path(resource_name) do |f|
+
+  = f.text_field     :email,    required: true, autofocus: true, skip_label: true, placeholder: User.human_attribute_name('email')
+  = f.password_field :password, required: true, autocomplete: 'off', skip_label: true, placeholder: User.human_attribute_name('password')
+
+  - if devise_mapping.rememberable?
+    = f.check_box :remember_me
+
+  = f.submit t('.login'), class: 'btn btn-primary btn-lg btn-block'
+
+  = link_to new_password_path(resource_name) do
+    %small= t('.forgot_password')

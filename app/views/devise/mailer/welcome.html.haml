@@ -1,0 +1,6 @@
+%h4.page-header= t('.hi', name: @resource.to_s)
+%p= t('.account_created', app_name: t('application_name'))
+%p= t('.login_html', login: @resource.email)
+%p= t('.password_html', password: @password)
+%p= t('.login_url_html', url: link_to(new_session_url(@resource, host: @host), new_session_url(@resource, host: @host)))
+%p= t('.bye')
