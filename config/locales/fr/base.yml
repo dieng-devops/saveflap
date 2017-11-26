@@ -13,6 +13,7 @@ fr:
     settings: Paramètres
     logster: Logster
     sidekiq: Sidekiq
+    monitoring: Monitoring
 
   button:
     cancel: Annuler

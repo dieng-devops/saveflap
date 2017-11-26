@@ -16,3 +16,8 @@ session_timeout: <%= ENV['SESSION_TIMEOUT'] %>
 
 # App config
 application_domain: <%= ENV['APPLICATION_DOMAIN'] %>
+
+# Monitoring config
+mail_on_application_error: <%= ENV['MAIL_ON_APPLICATION_ERROR'] %>
+status_page_user:          <%= ENV['STATUS_PAGE_USER'] %>
+status_page_pass:          <%= ENV['STATUS_PAGE_PASS'] %>

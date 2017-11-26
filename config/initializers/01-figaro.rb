@@ -22,6 +22,12 @@ APPLICATION_CONFIG = {
     APPLICATION_DOMAIN
   ),
 
+  monitoring_config: %w(
+    MAIL_ON_APPLICATION_ERROR
+    STATUS_PAGE_USER
+    STATUS_PAGE_PASS
+  ),
+
 }.freeze
 
 begin

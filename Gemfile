@@ -82,6 +82,9 @@ gem 'logster'
 # Async Jobs
 gem 'sidekiq'
 
+# Display services status page
+gem 'health-monitor-rails'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

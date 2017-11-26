@@ -131,6 +131,8 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    health-monitor-rails (7.2.3)
+      rails (>= 3.2)
     hiredis (0.6.1)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
@@ -366,6 +368,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   haml-rails
+  health-monitor-rails
   hiredis
   jquery-rails
   logster
