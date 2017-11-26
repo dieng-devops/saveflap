@@ -162,6 +162,8 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    page_title_helper (2.1.0)
+      rails (>= 3.0.0)
     pipetree (0.1.1)
     poltergeist (1.16.0)
       capybara (~> 2.1)
@@ -340,9 +342,9 @@ DEPENDENCIES
   jquery-rails
   mini_racer
   mysql2
+  page_title_helper
   poltergeist
   puma
-  pundit
   pundit-matchers
   rails (~> 5.1.4)
   rails-i18n
@@ -359,8 +361,6 @@ DEPENDENCIES
   simple_navigation_bootstrap
   simplecov
   spring
-  trailblazer-loader
-  trailblazer-operation
   trailblazer-rails
   turbolinks
   tzinfo

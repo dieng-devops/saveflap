@@ -42,6 +42,9 @@ gem 'simple-navigation'
 gem 'simple_navigation_bootstrap'
 gem 'rails_bootstrap_navbar'
 
+# Manage page title easily
+gem 'page_title_helper'
+
 # Forms style
 gem 'bootstrap_form'
 

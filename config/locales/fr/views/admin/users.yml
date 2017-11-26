@@ -1,0 +1,23 @@
+fr:
+
+  admin:
+    users:
+
+      new_title: &new_title Nouvel utilisateur
+      edit_title: &edit_title Modifier l'utilisateur
+
+      index:
+        title: Utilisateurs
+        add_user: Ajouter un utilisateur
+
+      new:
+        title: *new_title
+
+      create:
+        title: *new_title
+
+      edit:
+        title: *edit_title
+
+      update:
+        title: *edit_title
