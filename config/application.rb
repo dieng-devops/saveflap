@@ -41,5 +41,14 @@ module Flap
                                          db:         REDIS_DB_MAP.index('cache'),
                                          driver:     :hiredis,
                                          expires_in: 90.minutes }
+
+    # Logster
+    redis_server = Redis.new(
+      host: ENV['REDIS_HOST'],
+      port: ENV['REDIS_PORT'],
+      db:   REDIS_DB_MAP.index('logster'),
+      driver: :hiredis
+    )
+    Logster.store = Logster::RedisStore.new(redis_server)
   end
 end

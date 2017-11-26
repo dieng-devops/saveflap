@@ -76,6 +76,9 @@ gem 'responders'
 # Authorizations
 gem 'pundit'
 
+# Live Rails Logs
+gem 'logster'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

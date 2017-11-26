@@ -146,6 +146,7 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (5.9.211.38.1)
+    logster (1.2.8)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -359,6 +360,7 @@ DEPENDENCIES
   haml-rails
   hiredis
   jquery-rails
+  logster
   mini_racer
   mysql2
   page_title_helper

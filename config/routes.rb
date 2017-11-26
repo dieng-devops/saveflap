@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  ### All routes below this point should require login or API key ###
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Logster::Web, at: 'logs'
+  end
+
   devise_for :users, module: 'authentication',
               skip_helpers: [:registrations],
               path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }

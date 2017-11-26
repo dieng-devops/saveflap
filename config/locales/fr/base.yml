@@ -11,6 +11,7 @@ fr:
     infos: Informations
     change_password: Changer de mot de passe
     settings: Paramètres
+    logster: Logster
 
   button:
     cancel: Annuler
