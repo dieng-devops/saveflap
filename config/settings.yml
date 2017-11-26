@@ -13,3 +13,6 @@ redis_port: <%= ENV['REDIS_PORT'] %>
 
 # Devise config
 session_timeout: <%= ENV['SESSION_TIMEOUT'] %>
+
+# App config
+application_domain: <%= ENV['APPLICATION_DOMAIN'] %>

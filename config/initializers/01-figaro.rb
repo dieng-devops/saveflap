@@ -18,6 +18,10 @@ APPLICATION_CONFIG = {
     SESSION_TIMEOUT
   ),
 
+  app_config: %w(
+    APPLICATION_DOMAIN
+  ),
+
 }.freeze
 
 begin
