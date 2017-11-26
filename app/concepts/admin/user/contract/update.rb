@@ -9,5 +9,7 @@ module Admin::User::Contract
     attribute :email,      required: false
     attribute :language,   required: true
     attribute :time_zone,  required: true
+    attribute :admin,      required: false
+    attribute :enabled,    required: false
   end
 end

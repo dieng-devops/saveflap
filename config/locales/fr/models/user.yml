@@ -21,3 +21,8 @@ fr:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         remember_me: Se souvenir de moi
+
+        enabled: Compte actif
+        disabled: Compte inactif
+
+        admin: Administrateur

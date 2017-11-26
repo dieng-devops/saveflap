@@ -8,6 +8,8 @@ module Admin::User::Contract
     attribute :last_name,             required: true
     attribute :language,              required: true
     attribute :time_zone,             required: true
+    attribute :admin,                 required: false
+    attribute :enabled,               required: false
     attribute :email,                 required: false
     attribute :password,              required: false
     attribute :password_confirmation, required: false

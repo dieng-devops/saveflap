@@ -12,6 +12,12 @@
       = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
       = f.time_zone_select :time_zone, nil, { default: 'Paris' }
 
+      = f.form_group label: { text: User.human_attribute_name('admin') } do
+        = f.check_box :admin, label: ''
+
+      = f.form_group label: { text: User.human_attribute_name('enabled') } do
+        = f.check_box :enabled, label: ''
+
       = f.form_group do
         = f.button nil, options_for_spinner_button
         = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'
