@@ -26,7 +26,7 @@ module BaseController
     # we will check if the visitor has the rights to access to the Admin section.
     def require_admin
       return unless require_login
-      render_403 unless policy(:admin_zone).show?
+      raise Pundit::NotAuthorizedError unless policy(:admin_zone).show?
     end
 
 

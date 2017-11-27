@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   include BaseController::Errors
   include BaseController::Menus
 
+  rescue_from Pundit::NotAuthorizedError,   with: :render_403
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+
   private
 
     def _run_options(options)
