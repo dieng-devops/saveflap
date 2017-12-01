@@ -14,3 +14,6 @@
 # Ignore Dotenv files
 /.env
 /.env.*
+
+# Ignore Public files
+/public/assets
