@@ -4,7 +4,7 @@
   .panel-heading
     = link_to t('.add_user'), new_admin_user_path
   .panel-body
-    %table.table
+    %table.table{ id: 'users-table' }
       %thead
         %tr
           %th= User.human_attribute_name('first_name')
