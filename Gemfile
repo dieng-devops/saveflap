@@ -99,7 +99,6 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
 
-  gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'shoulda-context'
   gem 'pundit-matchers'
@@ -110,7 +109,9 @@ group :test, :development do
 
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'cucumber-rails', require: false
 
   # Code coverage
   gem 'simplecov'
