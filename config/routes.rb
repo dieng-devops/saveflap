@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   mount HealthMonitor::Engine, at: '/'
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: 'dev/emails'
+  end
+
   ### All routes below this point should require login or API key ###
   authenticate :user, lambda { |u| u.admin? } do
     mount Logster::Web, at: 'logs'

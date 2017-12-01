@@ -33,6 +33,15 @@ APPLICATION_CONFIG = {
     STATUS_PAGE_PASS
   ),
 
+  smtp_config: %w(
+    SMTP_HOST
+    SMTP_PORT
+    SMTP_DOMAIN
+    SMTP_USER
+    SMTP_PASS
+    MAIL_FROM
+  ),
+
 }.freeze
 
 begin

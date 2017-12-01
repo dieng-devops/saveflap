@@ -111,4 +111,7 @@ end
 
 group :development do
   gem 'spring'
+
+  # Email preview
+  gem 'letter_opener_web'
 end

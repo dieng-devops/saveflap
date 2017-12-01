@@ -21,3 +21,11 @@ application_domain: <%= ENV['APPLICATION_DOMAIN'] %>
 mail_on_application_error: <%= ENV['MAIL_ON_APPLICATION_ERROR'] %>
 status_page_user:          <%= ENV['STATUS_PAGE_USER'] %>
 status_page_pass:          <%= ENV['STATUS_PAGE_PASS'] %>
+
+# SMTP config
+smtp_host:   <%= ENV['SMTP_HOST'] %>
+smtp_port:   <%= ENV['SMTP_PORT'] %>
+smtp_domain: <%= ENV['SMTP_DOMAIN'] %>
+smtp_user:   <%= ENV['SMTP_USER'] %>
+smtp_pass:   <%= ENV['SMTP_PASS'] %>
+mail_from:   <%= ENV['MAIL_FROM'] %>
