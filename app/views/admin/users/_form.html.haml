@@ -21,6 +21,9 @@
           = f.form_group label: { text: User.human_attribute_name('enabled') } do
             = f.check_box :enabled, label: ''
 
+          - if @model.new_record?
+            = render 'password_fields', f: f
+
           = f.form_group do
             = f.button nil, options_for_spinner_button
             = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'

@@ -59,4 +59,9 @@ module ApplicationHelper
     bootstrap_form_for(object, opts, &block)
   end
 
+
+  def display_on_condition(test, condition)
+    test == condition ? '' : 'display: none;'
+  end
+
 end

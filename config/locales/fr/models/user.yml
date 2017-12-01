@@ -24,6 +24,11 @@ fr:
         password_confirmation: Confirmation du mot de passe
         remember_me: Se souvenir de moi
 
+        create_options: Options du mot de passe
+        generate_password: Générer un mot de passe
+        specify_password: Spécifier un mot de passe
+        send_by_mail: Envoyer les informations à l'utilisateur par mail
+
         enabled: Compte actif
         disabled: Compte inactif
 
