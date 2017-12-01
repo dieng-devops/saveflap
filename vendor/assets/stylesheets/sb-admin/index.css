@@ -4,4 +4,5 @@
 *= require sb-admin/bootstrap-custom
 *= require sb-admin/metisMenu
 *= require sb-admin/sb-admin-2
+*= require_tree ./custom
 */
