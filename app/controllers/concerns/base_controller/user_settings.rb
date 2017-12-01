@@ -8,12 +8,12 @@ module BaseController
       # Set TimeZone for current user
       # Must be in a around_action : Time.zone is NOT request local
       # http://railscasts.com/episodes/106-time-zones-revised?view=comments#comment_162005
-      around_action :set_time_zone
+      around_action :set_time_zone, if: :current_user
     end
 
 
     def setup_locale
-      I18n.locale = current_user.language || I18n.default_locale
+      I18n.locale = current_user&.language || I18n.default_locale
     end
 
 
