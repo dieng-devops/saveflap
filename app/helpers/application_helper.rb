@@ -24,7 +24,7 @@ module ApplicationHelper
     messages = []
     flash.each do |key, value|
       css = ALERT_MAPPING[key.to_sym]
-      content = value + button_close
+      content = button_close + value
       messages << content_tag(:div, content.html_safe, class: "alert #{css} fade in", role: 'alert')
     end
 
