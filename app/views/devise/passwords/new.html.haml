@@ -6,4 +6,4 @@
                      html: { method: :post, class: 'm-t' } do |f|
 
   = f.email_field :email, required: true, autofocus: true, skip_label: true, placeholder: User.human_attribute_name('email')
-  = f.primary t('.reset_password_instructions_short'), class: 'block full-width m-b'
+  = f.submit t('.reset_password_instructions_short'), class: 'btn btn-primary btn-lg btn-block'
