@@ -14,3 +14,8 @@
 #= require turbolinks
 #= require_tree .
 #= require_self
+
+onLoad = ->
+  $('.alert:not(.dont-dismiss)').delay(3000).slideUp(200, -> $(this).alert('close'))
+
+$(document).on('turbolinks:load', onLoad)
