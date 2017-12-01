@@ -28,6 +28,11 @@ Rails.application.routes.draw do
     root to: 'welcome#index', as: 'root'
 
     resources :settings, only: [:index]
-    resources :users, except: [:show]
+    resources :users, except: [:show] do
+      member do
+        get   'change_password'
+        patch 'update_password'
+      end
+    end
   end
 end

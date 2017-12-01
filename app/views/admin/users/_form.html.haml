@@ -6,6 +6,8 @@
       .panel.panel-default
         .panel-heading
           = icon 'info', t('text.infos')
+          .pull-right
+            = link_to icon('lock', t('.change_password')), change_password_admin_user_path(@model) unless @model.new_record?
 
         .panel-body
           = f.text_field  :first_name, required: true

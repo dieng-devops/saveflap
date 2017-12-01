@@ -21,3 +21,12 @@ fr:
 
       update:
         title: *edit_title
+
+      form:
+        change_password: Changer le mot de passe
+
+      change_password:
+        title: Changement de mot de passe
+
+      update_password:
+        title: Changement de mot de passe

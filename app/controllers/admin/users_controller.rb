@@ -42,5 +42,19 @@ module Admin
       respond_with result['model'], location: -> { admin_users_path }
     end
 
+
+    def change_password
+      run Admin::User::Password::Present
+    end
+
+
+    def update_password
+      run Admin::User::Password do |result|
+        sign_in(result['model'], bypass: true) if result['model'].id == current_user.id
+        return respond_with result['model'], location: -> { admin_users_path }
+      end
+      render :change_password
+    end
+
   end
 end
