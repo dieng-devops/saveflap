@@ -7,7 +7,7 @@ feature 'Users', js: true do
     FactoryBot.create(:user, first_name: 'To', last_name: 'delete')
   end
 
-  scenario 'Consultant users cannot manage Users' do
+  scenario 'Normal users cannot manage Users' do
     visit_as :user, main_app.admin_users_path
     expect(page).to have_content('403')
   end
@@ -76,5 +76,17 @@ feature 'Users', js: true do
     delete_table_entry 'users-table', 'To delete'
 
     assert_table_entries 'users-table', 2
+  end
+
+  scenario 'Admin user can edit Users password' do
+    user = FactoryBot.create(:user)
+    visit_as :admin, main_app.change_password_admin_user_path(user)
+
+    assert_page_title 'Changement de mot de passe'
+    choose 'Générer un mot de passe'
+    check "Envoyer les informations à l'utilisateur par mail"
+
+    expect { find("[type=submit]").click }
+      .to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 end
