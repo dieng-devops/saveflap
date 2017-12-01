@@ -16,6 +16,8 @@ fr:
         email: Adresse email
         first_name: Prénom
         last_name: Nom
+        time_zone: Fuseau horaire
+        language: Langue
 
         current_password: Mot de passe actuel
         password: Mot de passe
