@@ -1,23 +1,26 @@
 %h2.page-header= page_title
 
-.row
-  .col-md-6
+= easy_form_for [:admin, @form], label_col: 'col-md-4', control_col: 'col-md-8' do |f|
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          = icon 'info', t('text.infos')
 
-    = easy_form_for [:admin, @form] do |f|
+        .panel-body
+          = f.text_field  :first_name, required: true
+          = f.text_field  :last_name,  required: true
+          = f.email_field :email,      required: true
 
-      = f.text_field :first_name
-      = f.text_field :last_name
-      = f.text_field :email
+          = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
+          = f.time_zone_select :time_zone, nil, { default: 'Paris' }
 
-      = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
-      = f.time_zone_select :time_zone, nil, { default: 'Paris' }
+          = f.form_group label: { text: User.human_attribute_name('admin') } do
+            = f.check_box :admin, label: ''
 
-      = f.form_group label: { text: User.human_attribute_name('admin') } do
-        = f.check_box :admin, label: ''
+          = f.form_group label: { text: User.human_attribute_name('enabled') } do
+            = f.check_box :enabled, label: ''
 
-      = f.form_group label: { text: User.human_attribute_name('enabled') } do
-        = f.check_box :enabled, label: ''
-
-      = f.form_group do
-        = f.button nil, options_for_spinner_button
-        = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'
+          = f.form_group do
+            = f.button nil, options_for_spinner_button
+            = link_to t('button.cancel'), admin_users_path, class: 'btn btn-default'
