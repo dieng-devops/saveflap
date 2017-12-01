@@ -3,6 +3,7 @@
   %head= render 'layouts/common/head', assets_for_layout: 'main/application'
 
   %body
+
     #wrapper
 
       = navbar container: false, static: :top, style: 'margin-bottom: 0;' do
@@ -17,3 +18,5 @@
           .col-lg-12
             #flash-messages= render_flashes
             = yield
+
+    = render 'layouts/common/javascript'
