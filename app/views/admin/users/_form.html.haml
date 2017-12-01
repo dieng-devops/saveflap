@@ -10,7 +10,7 @@
         .panel-body
           = f.text_field  :first_name, required: true
           = f.text_field  :last_name,  required: true
-          = f.email_field :email,      required: true
+          = f.email_field :email,      required: true, label_class: 'required'
 
           = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
           = f.time_zone_select :time_zone, nil, { default: 'Paris' }
