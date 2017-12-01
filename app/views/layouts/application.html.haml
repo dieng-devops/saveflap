@@ -7,7 +7,7 @@
     #wrapper
 
       = navbar container: false, static: :top, style: 'margin-bottom: 0;' do
-        = navbar_header brand: 'Flap!', brand_link: root_path
+        = navbar_header brand: t('application_name'), brand_link: root_path
         = render_navigation_menu(:topbar_right)
         .navbar-default.sidebar{ role: 'navigation' }
           .sidebar-nav.navbar-collapse
