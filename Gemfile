@@ -85,6 +85,9 @@ gem 'sidekiq'
 # Display services status page
 gem 'health-monitor-rails'
 
+# Use Syslog to manage our logs
+gem 'syslogger'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

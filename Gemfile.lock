@@ -314,6 +314,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    syslogger (1.6.5)
     temple (0.8.0)
     thor (0.20.0)
     thread_safe (0.3.6)
@@ -397,6 +398,7 @@ DEPENDENCIES
   simple_navigation_bootstrap
   simplecov
   spring
+  syslogger
   trailblazer-rails
   turbolinks
   tzinfo
