@@ -28,5 +28,10 @@ module Admin::User::Contract
       end
     end
 
+
+    def send_email?
+      send_by_mail == '1'
+    end
+
   end
 end

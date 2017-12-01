@@ -8,4 +8,15 @@ class Admin::User::Create < Trailblazer::Operation
   step Nested(Present)
   step Contract::Validate(key: :user)
   step Contract::Persist()
+  step :notify!
+
+
+  def notify!(options, current_user:, model:, **)
+    form = options['contract.default']
+    if form.send_email?
+      DeviseMailer.welcome(model, password: form.created_password).deliver_now
+    end
+    true
+  end
+
 end
