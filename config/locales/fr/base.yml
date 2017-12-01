@@ -23,3 +23,11 @@ fr:
     name:
       fr: Français
       en: Anglais
+
+  helpers:
+    select:
+      prompt: Sélectionnez une entrée
+    submit:
+      create: Créer
+      update: Modifier
+      submit: Sauvegarder
