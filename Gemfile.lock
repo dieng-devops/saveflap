@@ -81,6 +81,8 @@ GEM
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
     crass (1.0.3)
+    css_parser (1.6.0)
+      addressable
     database_cleaner (1.6.2)
     declarative (0.0.10)
     declarative-builder (0.1.0)
@@ -139,6 +141,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    htmlentities (4.3.4)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.3.1)
@@ -180,6 +183,13 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    premailer (1.11.1)
+      addressable
+      css_parser (>= 1.6.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.10.0)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.1)
     puma (3.11.0)
     pundit (1.1.0)
@@ -382,8 +392,10 @@ DEPENDENCIES
   logster
   mini_racer
   mysql2
+  nokogiri
   page_title_helper
   poltergeist
+  premailer-rails
   puma
   pundit
   pundit-matchers

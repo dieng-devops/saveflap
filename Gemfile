@@ -88,6 +88,10 @@ gem 'health-monitor-rails'
 # Use Syslog to manage our logs
 gem 'syslogger'
 
+# EMails
+gem 'nokogiri'
+gem 'premailer-rails'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
