@@ -33,11 +33,6 @@ module NavigationHelper
   end
 
 
-  def caret
-    content_tag(:b, '', class: 'caret')
-  end
-
-
   def menu_divider
     ['', '#', html: { divider: true, class: 'divider-horizontal' }, highlights_on: %r(//)]
   end
