@@ -114,8 +114,35 @@ group :test, :development do
 end
 
 group :development do
+  # Rails test server
   gem 'spring'
+  gem 'spring-commands-rspec'
+
+  # Deployment
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-foreman'
+  gem 'capistrano-template'
 
   # Email preview
   gem 'letter_opener_web'
+
+  # SQL Queries optimizer
+  gem 'bullet'
+
+  # Security analysis
+  gem 'brakeman'
+
+  # Code analyzer
+  gem 'rubocop',    require: false
+  gem 'rubycritic', require: false
+
+  # Autorun tests
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
+
+  # Generate Entity-Relationship Diagrams
+  gem 'rails-erd'
 end
