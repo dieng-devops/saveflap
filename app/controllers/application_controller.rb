@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include BaseController::Devise
   include BaseController::Errors
   include BaseController::Menus
+  include BaseController::UserSettings
 
   rescue_from Pundit::NotAuthorizedError,   with: :render_403
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
