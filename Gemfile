@@ -88,6 +88,9 @@ gem 'health-monitor-rails'
 # Use Syslog to manage our logs
 gem 'syslogger'
 
+# Foreman (so we can export systemd config files)
+gem 'foreman'
+
 # EMails
 gem 'nokogiri'
 gem 'premailer-rails'
