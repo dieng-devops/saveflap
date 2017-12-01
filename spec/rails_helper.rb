@@ -2,6 +2,7 @@ require 'simplecov'
 
 # Start SimpleCov
 SimpleCov.start 'rails' do
+  add_group 'Concepts',   'app/concepts/'
   add_group 'Datatables', 'app/datatables/'
   add_group 'Policies',   'app/policies/'
   add_group 'Presenters', 'app/presenters/'
