@@ -1,11 +1,6 @@
 module Admin::User::Contract
   class Create < ActionForm::Base
 
-    PASSWORD_OPTIONS = [
-      ['generate', User.human_attribute_name('generate_password')],
-      ['manual',   User.human_attribute_name('specify_password')],
-    ].freeze
-
     self.main_model = :user
 
     # Real attributes
