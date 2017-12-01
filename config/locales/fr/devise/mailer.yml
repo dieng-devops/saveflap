@@ -1,0 +1,37 @@
+fr:
+
+  devise:
+    mailer:
+
+      reset_password_instructions:
+        hi: "Bonjour %{name},"
+        bye: Bonne journée !
+        signature: "L'équipe %{app_name}"
+        ask_for_password_change: Quelqu'un a demandé un lien pour changer votre mot de passe.
+        follow_link: Vous pouvez le faire en suivant le lien ci-dessous.
+        change_my_password: Changer de mot de passe.
+        ignore: Si vous n'êtes pas à l'origine de cette demande vous pouvez ignorer cet email, votre mot de passe ne sera pas modifié.
+
+      password_change:
+        hi: "Bonjour %{name},"
+        new_one: "Votre mot de passe a été changé, voici le nouveau : %{password}"
+        new_one_html: "Votre mot de passe a été changé, voici le nouveau : <strong>%{password}</strong>"
+        reminder: "Pour rappel votre login est : %{login}."
+        reminder_html: "Pour rappel votre login est : <strong>%{login}</strong>."
+        login: "Pour vous connecter rendez vous à l'adresse : %{url}."
+        login_html: "Pour vous connecter rendez vous à l'adresse : %{url}."
+        bye: Bonne journée !
+        signature: "L'équipe %{app_name}"
+
+      welcome:
+        subject: Bienvenue !
+        hi: "Bonjour %{name},"
+        account_created: "Votre compte a été créé sur la plateforme %{app_name}."
+        login: "Votre login est : %{login}"
+        login_html: "Votre login est : <strong>%{login}</strong>"
+        password: "Votre mot de passe est : %{password}"
+        password_html: "Votre mot de passe est : <strong>%{password}</strong>"
+        login_url: "Pour vous connecter rendez vous à l'adresse : %{url}."
+        login_url_html: "Pour vous connecter rendez vous à l'adresse : %{url}."
+        bye: Bonne journée !
+        signature: "L'équipe %{app_name}"

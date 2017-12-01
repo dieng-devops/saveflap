@@ -1,0 +1,23 @@
+fr:
+
+  create_account: &create_account Créer un compte
+  forgot_password: &forgot_password Mot de passe oublié?
+  change_password: &change_password Changement de mot de passe
+  connexion: &connexion Connexion
+
+  authentication:
+    passwords:
+      new:
+        title: *forgot_password
+      create:
+        title: *forgot_password
+      edit:
+        title: *change_password
+    sessions:
+      new:
+        title: *connexion
+    registrations:
+      edit:
+        title: *change_password
+      update:
+        title: *change_password
