@@ -15,11 +15,13 @@
           = f.select           :language, available_locales, selected: (@model.language.present? ? @model.language : I18n.default_locale)
           = f.time_zone_select :time_zone, nil, { default: 'Paris' }
 
-          = f.form_group label: { text: User.human_attribute_name('admin') } do
-            = f.check_box :admin, label: ''
+          - unless @model.super_admin?
+            = f.form_group label: { text: User.human_attribute_name('admin') } do
+              = f.check_box :admin, label: ''
 
-          = f.form_group label: { text: User.human_attribute_name('enabled') } do
-            = f.check_box :enabled, label: ''
+          - unless @model.super_admin?
+            = f.form_group label: { text: User.human_attribute_name('enabled') } do
+              = f.check_box :enabled, label: ''
 
           - if @model.new_record?
             = render 'password_fields', f: f

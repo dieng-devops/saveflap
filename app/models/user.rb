@@ -7,4 +7,10 @@ class User < ApplicationRecord
   def to_s
     "#{first_name} #{last_name}"
   end
+
+
+  def super_admin?
+    id == 1
+  end
+
 end
