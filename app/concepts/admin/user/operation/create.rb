@@ -11,7 +11,7 @@ class Admin::User::Create < Trailblazer::Operation
   step :notify!
 
 
-  def notify!(options, current_user:, model:, **)
+  def notify!(options, model:, **)
     form = options['contract.default']
     if form.send_email?
       DeviseMailer.welcome(model, password: form.created_password).deliver_now
