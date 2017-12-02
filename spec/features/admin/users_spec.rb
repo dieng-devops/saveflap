@@ -3,8 +3,8 @@ require 'rails_helper'
 feature 'Users', js: true do
 
   def prepare_index_page
-    FactoryBot.create(:admin, first_name: 'To', last_name: 'edit')
-    FactoryBot.create(:user, first_name: 'To', last_name: 'delete')
+    create_user(admin: true, first_name: 'To', last_name: 'edit')
+    create_user(first_name: 'To', last_name: 'delete')
   end
 
   scenario 'Normal users cannot manage Users' do
@@ -79,7 +79,7 @@ feature 'Users', js: true do
   end
 
   scenario 'Admin user can edit Users password' do
-    user = FactoryBot.create(:user)
+    user = create_user
     visit_as :admin, main_app.change_password_admin_user_path(user)
 
     assert_page_title 'Changement de mot de passe'

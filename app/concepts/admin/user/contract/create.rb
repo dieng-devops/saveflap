@@ -21,6 +21,7 @@ module Admin::User::Contract
 
     # Validations
     validates :create_options, presence: true, inclusion: { in: %w(generate manual) }
+    validate  :email_format
 
     def submit(params)
       super
@@ -36,7 +37,16 @@ module Admin::User::Contract
 
 
     def send_email?
-      send_by_mail == '1'
+      send_by_mail.in? [true, '1']
+    end
+
+
+    def email_format
+      return if email.nil?
+      matches = email.match(ApplicationRecord::VALID_EMAIL_REGEX)
+      return if matches.nil?
+      matches = matches.named_captures
+      errors.add(:email, :invalid) if matches.empty? || matches['mail'].end_with?('.')
     end
 
   end

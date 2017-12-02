@@ -5,11 +5,16 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Warden::Test::Helpers
   config.include FeaturesHelper
+  config.include Trailblazer::Test::Helper::Operation
 
   config.color = true
   config.fail_fast = false
 
   config.infer_spec_type_from_file_location!
+
+  config.define_derived_metadata(file_path: Regexp.new('/spec/concepts/')) do |metadata|
+    metadata[:type] = :concept
+  end
 
   config.use_transactional_fixtures = false
 
@@ -36,5 +41,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    ActionMailer::Base.deliveries.clear
   end
 end

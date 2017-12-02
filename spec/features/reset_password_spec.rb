@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Reset password', js: true do
 
-  scenario 'When existing user try to reset his password' do
-    FactoryBot.create(:user, email: 'toto@example.net')
+  scenario 'Existing user can reset his password' do
+    create_user(email: 'toto@example.net')
     load_server_host
     visit main_app.root_path
     click_link 'Mot de passe oublié?'

@@ -48,6 +48,3 @@ ActiveRecord::Migration.maintain_test_schema!
 require_relative 'config_capybara'
 require_relative 'config_rspec'
 require_relative 'config_shoulda'
-
-VALID_MAIL_ADDRESSES   = %w(user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn).freeze
-INVALID_MAIL_ADDRESSES = %w(user@foo,com user_at_foo.org example.user@foo.foo@bar_baz.com foo.bar.@gmail.com foo@bar+baz.com).freeze

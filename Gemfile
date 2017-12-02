@@ -108,13 +108,15 @@ group :test, :development do
   gem 'database_cleaner'
 
   gem 'capybara'
-  gem 'capybara-screenshot'
+  gem 'capybara-screenshot', git: 'https://github.com/n-rodriguez/capybara-screenshot.git'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'cucumber-rails', require: false
 
   # Code coverage
   gem 'simplecov'
+
+  gem 'trailblazer-test', git: 'https://github.com/trailblazer/trailblazer-test.git'
 end
 
 group :development do

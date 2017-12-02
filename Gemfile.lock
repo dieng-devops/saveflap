@@ -5,6 +5,20 @@ GIT
     actionform (1.0.0)
       rails (>= 4.2)
 
+GIT
+  remote: https://github.com/n-rodriguez/capybara-screenshot.git
+  revision: c6ba561a4180878a1c9252f51f25e5e3afa4fa64
+  specs:
+    capybara-screenshot (1.0.18)
+      capybara (>= 1.0, < 3)
+      launchy
+
+GIT
+  remote: https://github.com/trailblazer/trailblazer-test.git
+  revision: 6b6c7a479365a2d2d5dd7a67b58607078b1f4222
+  specs:
+    trailblazer-test (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,9 +114,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-screenshot (1.0.18)
-      capybara (>= 1.0, < 3)
-      launchy
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
@@ -549,7 +560,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano-template
   capybara
-  capybara-screenshot
+  capybara-screenshot!
   chromedriver-helper
   coffee-rails
   cucumber-rails
@@ -602,6 +613,7 @@ DEPENDENCIES
   spring-commands-rspec
   syslogger
   trailblazer-rails
+  trailblazer-test!
   turbolinks
   tzinfo
   uglifier

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe DeviseMailer do
 
   describe '#reset_password_instructions' do
-    let(:user) { create(:user) }
+    let(:user) { create_user }
     let(:mail) { described_class.reset_password_instructions(user, 'foofoo').deliver_now }
 
     it 'should have a subject' do
@@ -25,7 +25,7 @@ describe DeviseMailer do
 
 
   describe '#password_change' do
-    let(:user) { create(:user, password: 'foofoo', password_confirmation: 'foofoo') }
+    let(:user) { create_user(password: 'foofoo', password_confirmation: 'foofoo') }
     let(:mail) { described_class.password_change(user, password: 'foofoo').deliver_now }
 
     it 'should have a subject' do
@@ -47,7 +47,7 @@ describe DeviseMailer do
 
 
   describe '#welcome' do
-    let(:user) { create(:user, password: 'foofoo', password_confirmation: 'foofoo') }
+    let(:user) { create_user(password: 'foofoo', password_confirmation: 'foofoo') }
     let(:mail) { described_class.welcome(user, password: 'foofoo').deliver_now }
 
     it 'should have a subject' do
