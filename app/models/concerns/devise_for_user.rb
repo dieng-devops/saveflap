@@ -20,4 +20,9 @@ module DeviseForUser
     super if enabled?
   end
 
+
+  def currently_logged_in?
+    logged_in? && last_request_at.present? && !timedout?(last_request_at)
+  end
+
 end
