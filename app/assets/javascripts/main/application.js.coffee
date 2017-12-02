@@ -11,6 +11,8 @@
 # about supported directives.
 #
 #= require sb-admin
+#= require my-datatables
+#= require select2-full
 #= require turbolinks
 #= require_tree .
 #= require_self

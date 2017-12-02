@@ -95,6 +95,15 @@ gem 'foreman'
 gem 'nokogiri'
 gem 'premailer-rails'
 
+# Datatables
+gem 'ajax-datatables-rails'
+
+# Prettyfy JSON
+gem 'neatjson'
+
+# Select2
+gem 'select2-rails'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

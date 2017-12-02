@@ -3,6 +3,19 @@ fr:
   application_name: Flap!
 
   text:
+    "yes": Oui
+    "no": Non
+    "true": Oui
+    "false": Non
+    or: ou
+    and: et
+    by: par
+    all: Tout
+    of: de
+    ofa: d'
+    here: ici
+    are_you_sure: Etes vous sur?
+    actions: Actions
     administration: Administration
     homepage: Accueil
     homepage_admin: Accueil Admin
@@ -16,6 +29,11 @@ fr:
     logster: Logster
     sidekiq: Sidekiq
     monitoring: Monitoring
+    filter_by: Filter par
+    state:
+      active: Actifs
+      deleted: Supprimés
+      locked: Verrouillés
 
   button:
     cancel: Annuler
