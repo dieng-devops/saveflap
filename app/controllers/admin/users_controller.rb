@@ -3,6 +3,7 @@ module Admin
 
     responders :flash
     respond_to :html
+    respond_to :js
 
     include BaseController::Datatable
 
