@@ -30,6 +30,7 @@ fr:
     sidekiq: Sidekiq
     monitoring: Monitoring
     filter_by: Filter par
+    delete: Supprimer
     state:
       active: Actifs
       deleted: Supprimés

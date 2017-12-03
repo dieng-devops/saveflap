@@ -1,0 +1,32 @@
+- bootstrap_datatables_for :users,
+    ajax:   { url: datatable_admin_users_path(format: :json), type: 'POST' },
+    dom:    datatable_dom_with_selected_and_buttons,
+    order:  [[ 0, 'asc' ]] do |t|
+
+  - t.js_method 'createDatatableWithButtons'
+
+  - t.button datatable_button_for('reset_filters')
+
+  - t.button datatable_button_for('csv')
+  - t.button datatable_button_for('excel')
+  - t.button datatable_button_for('pdf')
+  - t.button datatable_button_for('print')
+
+  - t.head_for :first_name,      label: User.human_attribute_name('first_name')
+  - t.head_for :email,           label: User.human_attribute_name('email')
+  - t.head_for :admin,           label: User.human_attribute_name('admin')
+  - t.head_for :last_sign_in_at, label: User.human_attribute_name('last_connection')
+  - t.head_for :actions,         label: t('text.actions'), sortable: false
+  - t.head_for :enabled,         label: User.human_attribute_name('enabled'), visible: false
+  - t.body
+
+  = t.search_form url: admin_users_path, method: :get, layout: :horizontal do |f|
+    = hidden_field_tag 'ids[]'
+    .row
+      .col-md-3= f.search_field :first_name
+      .col-md-3= f.select :admin
+      .col-md-3= f.select :enabled
+
+  = t.render_datatable
+  - content_for :javascript do
+    = t.render_js_datatable

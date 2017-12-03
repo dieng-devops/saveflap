@@ -33,3 +33,7 @@ fr:
         disabled: Compte inactif
 
         admin: Administrateur
+
+        last_connection: Dernière connexion
+        never_connected: Jamais connecté
+        connected: Connecté

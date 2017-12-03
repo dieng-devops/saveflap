@@ -4,6 +4,10 @@ module Admin
     responders :flash
     respond_to :html
 
+    include BaseController::Datatable
+
+    set_datatable_class 'Admin::UserDatatable'
+
 
     def index
       run Admin::User::Index

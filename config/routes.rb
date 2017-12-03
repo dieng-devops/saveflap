@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: 'dev/emails'
   end
 
+  concern :with_datatable do
+    post 'datatable', on: :collection
+  end
+
   ### All routes below this point should require login or API key ###
   authenticate :user, lambda { |u| u.admin? } do
     mount Logster::Web, at: 'logs'
@@ -32,7 +36,7 @@ Rails.application.routes.draw do
     root to: 'welcome#index', as: 'root'
 
     resources :settings, only: [:index]
-    resources :users, except: [:show] do
+    resources :users, except: [:show], concerns: [:with_datatable] do
       member do
         get   'change_password'
         patch 'update_password'
