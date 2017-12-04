@@ -71,6 +71,7 @@ GEM
     ast (2.3.0)
     autoprefixer-rails (7.2.1)
       execjs
+    awesome_print (1.8.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -325,6 +326,8 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (3.0.1)
     puma (3.11.0)
     pundit (1.1.0)
@@ -554,6 +557,7 @@ DEPENDENCIES
   actionform!
   ajax-datatables-rails
   autoprefixer-rails
+  awesome_print
   bcrypt
   bootsnap
   bootstrap-sass
@@ -593,6 +597,7 @@ DEPENDENCIES
   nokogiri
   page_title_helper
   premailer-rails
+  pry-rails
   puma
   pundit
   pundit-matchers

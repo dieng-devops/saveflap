@@ -104,6 +104,12 @@ gem 'neatjson'
 # Select2
 gem 'select2-rails'
 
+# Use pry instead of irb for Rails console
+gem 'pry-rails'
+
+# Pretty print objects Rails console
+gem 'awesome_print'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
