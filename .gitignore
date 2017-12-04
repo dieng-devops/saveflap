@@ -20,3 +20,9 @@
 
 # Ignore Public files
 /public/assets
+
+# Ignore ERD files
+/erd.pdf
+
+# Ignore generated doc
+/doc/flap

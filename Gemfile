@@ -169,4 +169,8 @@ group :development do
 
   # Manage gems license
   gem 'license_finder'
+
+  # Create project documentation
+  gem 'sdoc'
+  gem 'toml'
 end
