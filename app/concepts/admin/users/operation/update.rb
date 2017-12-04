@@ -1,8 +1,8 @@
-class Admin::User::Update < Trailblazer::Operation
+class Admin::Users::Update < Trailblazer::Operation
 
   class Present < Trailblazer::Operation
     step Model(User, :find_by)
-    step Contract::Build(constant: Admin::User::Contract::Update)
+    step Contract::Build(constant: Admin::Users::Contract::Update)
   end
 
   step Nested(Present)

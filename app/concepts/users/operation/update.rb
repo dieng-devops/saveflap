@@ -1,8 +1,8 @@
-class User::Update < Trailblazer::Operation
+class Users::Update < Trailblazer::Operation
 
   class Present < Trailblazer::Operation
     step :setup_user
-    step Contract::Build(constant: User::Contract::Update)
+    step Contract::Build(constant: Users::Contract::Update)
 
     def setup_user(options, params:, **)
       options['model'] = options['current_user']

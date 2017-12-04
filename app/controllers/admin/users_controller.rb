@@ -11,17 +11,17 @@ module Admin
 
 
     def index
-      run Admin::User::Index
+      run Admin::Users::Index
     end
 
 
     def new
-      run Admin::User::Create::Present
+      run Admin::Users::Create::Present
     end
 
 
     def create
-      run Admin::User::Create do |result|
+      run Admin::Users::Create do |result|
         return respond_with result['model'], location: -> { admin_users_path }
       end
       render :new
@@ -29,12 +29,12 @@ module Admin
 
 
     def edit
-      run Admin::User::Update::Present
+      run Admin::Users::Update::Present
     end
 
 
     def update
-      run Admin::User::Update do |result|
+      run Admin::Users::Update do |result|
         reload_user_locales if result['model'].id == current_user.id
         return respond_with result['model'], location: -> { admin_users_path }
       end
@@ -43,18 +43,18 @@ module Admin
 
 
     def destroy
-      run Admin::User::Delete
+      run Admin::Users::Delete
       respond_with result['model'], location: -> { admin_users_path }
     end
 
 
     def change_password
-      run Admin::User::Password::Present
+      run Admin::Users::Password::Present
     end
 
 
     def update_password
-      run Admin::User::Password do |result|
+      run Admin::Users::Password do |result|
         sign_in(result['model'], bypass: true) if result['model'].id == current_user.id
         return respond_with result['model'], location: -> { admin_users_path }
       end

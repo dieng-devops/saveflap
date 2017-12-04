@@ -1,4 +1,4 @@
-class Admin::User::Index < Trailblazer::Operation
+class Admin::Users::Index < Trailblazer::Operation
   step :model!
 
   def model!(options, *)

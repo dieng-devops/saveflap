@@ -1,4 +1,4 @@
-class Admin::User::Delete < Trailblazer::Operation
+class Admin::Users::Delete < Trailblazer::Operation
   step Model(User, :find_by)
   step :delete!
 

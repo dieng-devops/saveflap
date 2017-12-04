@@ -48,7 +48,7 @@ module Admin
 
 
       def get_raw_records
-        ::User.send(*filter_on_active(column_filter: '5'))
+        User.send(*filter_on_active(column_filter: '5'))
       end
 
 

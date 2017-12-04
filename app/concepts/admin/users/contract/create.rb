@@ -1,4 +1,4 @@
-module Admin::User::Contract
+module Admin::Users::Contract
   class Create < ActionForm::Base
 
     self.main_model = :user

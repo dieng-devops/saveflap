@@ -1,4 +1,4 @@
-module User::Contract
+module Admin::Users::Contract
   class Update < ActionForm::Base
 
     self.main_model = :user
@@ -9,5 +9,7 @@ module User::Contract
     attribute :email,      required: false
     attribute :language,   required: true
     attribute :time_zone,  required: true
+    attribute :admin,      required: false
+    attribute :enabled,    required: false
   end
 end

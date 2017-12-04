@@ -1,8 +1,8 @@
-class Admin::User::Password < Trailblazer::Operation
+class Admin::Users::Create < Trailblazer::Operation
 
   class Present < Trailblazer::Operation
-    step Model(User, :find_by)
-    step Contract::Build(constant: Admin::User::Contract::Password)
+    step Model(User, :new)
+    step Contract::Build(constant: Admin::Users::Contract::Create)
   end
 
   step Nested(Present)
@@ -14,7 +14,7 @@ class Admin::User::Password < Trailblazer::Operation
   def notify!(options, model:, **)
     form = options['contract.default']
     if form.send_email?
-      DeviseMailer.password_change(model, password: form.created_password).deliver_now
+      DeviseMailer.welcome(model, password: form.created_password).deliver_now
     end
     true
   end
