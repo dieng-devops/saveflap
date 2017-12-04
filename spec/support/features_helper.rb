@@ -47,7 +47,7 @@ module FeaturesHelper
 
   def edit_table_entry(table, entry)
     within_table(table) do
-      find('tr', text: entry).click_link('Edit')
+      find('tr', text: entry).click_link(entry)
     end
 
     yield
@@ -59,7 +59,7 @@ module FeaturesHelper
   def delete_table_entry(table, entry)
     within_table(table) do
       accept_alert do
-        find('tr', text: entry).click_link('Destroy')
+        find('tr', text: entry).click_link('Supprimer')
       end
     end
   end

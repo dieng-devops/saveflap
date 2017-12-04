@@ -17,7 +17,7 @@ feature 'Users', js: true do
     visit_as :admin, main_app.admin_users_path
 
     assert_page_title 'Utilisateurs'
-    assert_table_entries 'users-table', 3
+    assert_table_entries 'users-datatable', 3
   end
 
   describe 'Admin user can create Users' do
@@ -26,7 +26,7 @@ feature 'Users', js: true do
       visit_as :admin, main_app.admin_users_path
 
       assert_page_title 'Utilisateurs'
-      assert_table_entries 'users-table', 3
+      assert_table_entries 'users-datatable', 3
     end
 
     scenario 'with valid data' do
@@ -37,7 +37,7 @@ feature 'Users', js: true do
         choose  :user_create_options_generate
       end
 
-      assert_table_entries 'users-table', 4
+      assert_table_entries 'users-datatable', 4
     end
 
     scenario 'with invalid data' do
@@ -56,14 +56,14 @@ feature 'Users', js: true do
     visit_as :admin, main_app.admin_users_path
 
     assert_page_title 'Utilisateurs'
-    assert_table_entries 'users-table', 3
+    assert_table_entries 'users-datatable', 3
 
-    edit_table_entry 'users-table', 'To edit' do
+    edit_table_entry 'users-datatable', 'To edit' do
       fill_in :user_last_name, with: 'edit done'
     end
 
-    assert_table_entries 'users-table', 3
-    assert_table_contains 'users-table', 'To edit done'
+    assert_table_entries 'users-datatable', 3
+    assert_table_contains 'users-datatable', 'To edit done'
   end
 
   scenario 'Admin user can delete Users' do
@@ -71,11 +71,11 @@ feature 'Users', js: true do
     visit_as :admin, main_app.admin_users_path
 
     assert_page_title 'Utilisateurs'
-    assert_table_entries 'users-table', 3
+    assert_table_entries 'users-datatable', 3
 
-    delete_table_entry 'users-table', 'To delete'
+    delete_table_entry 'users-datatable', 'To delete'
 
-    assert_table_entries 'users-table', 2
+    assert_table_entries 'users-datatable', 2
   end
 
   scenario 'Admin user can edit Users password' do
