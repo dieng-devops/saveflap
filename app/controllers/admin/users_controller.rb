@@ -11,7 +11,6 @@ module Admin
 
 
     def index
-      run Admin::Users::Index
     end
 
 
