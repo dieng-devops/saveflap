@@ -166,4 +166,7 @@ group :development do
 
   # Generate Entity-Relationship Diagrams
   gem 'rails-erd'
+
+  # Manage gems license
+  gem 'license_finder'
 end

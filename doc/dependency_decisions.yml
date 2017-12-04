@@ -1,0 +1,31 @@
+---
+- - :whitelist
+  - mit
+  - :who:
+    :why:
+    :versions: []
+    :when: 2017-12-04 13:12:30.351970391 Z
+- - :whitelist
+  - newbsd
+  - :who:
+    :why:
+    :versions: []
+    :when: 2017-12-04 13:12:55.655305964 Z
+- - :whitelist
+  - apache2
+  - :who:
+    :why:
+    :versions: []
+    :when: 2017-12-04 13:13:00.729718708 Z
+- - :whitelist
+  - ruby
+  - :who:
+    :why:
+    :versions: []
+    :when: 2017-12-04 13:13:07.556253749 Z
+- - :whitelist
+  - isc
+  - :who:
+    :why:
+    :versions: []
+    :when: 2017-12-04 13:13:09.552467914 Z
