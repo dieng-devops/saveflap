@@ -88,6 +88,9 @@ gem 'health-monitor-rails'
 # Use Syslog to manage our logs
 gem 'syslogger'
 
+# Be notified of exceptions in production
+gem 'exception_notification'
+
 # Foreman (so we can export systemd config files)
 gem 'foreman'
 

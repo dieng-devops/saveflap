@@ -168,6 +168,9 @@ GEM
     equalizer (0.0.11)
     erubi (1.7.0)
     erubis (2.7.0)
+    exception_notification (4.2.2)
+      actionmailer (>= 4.0, < 6)
+      activesupport (>= 4.0, < 6)
     execjs (2.7.0)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
@@ -569,6 +572,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  exception_notification
   factory_bot_rails
   faker
   figaro
