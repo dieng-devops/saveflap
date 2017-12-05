@@ -10,6 +10,7 @@ class Users::Update < Trailblazer::Operation
   end
 
   step Nested(Present)
+  step Policy::Pundit::Params(UserPolicy, key: :user)
   step Contract::Validate(key: :user)
   step Contract::Persist()
 end

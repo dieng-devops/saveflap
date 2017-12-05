@@ -10,9 +10,6 @@ module Admin::Users::Contract
       attribute :language,   required: true
       attribute :time_zone,  required: true
 
-      attribute :admin,      required: false
-      attribute :enabled,    required: false
-
       # Validations
       validate  :email_format
     end
