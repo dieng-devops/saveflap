@@ -52,5 +52,12 @@ module Flap
   end
 end
 
+# Patch ActionForm with our patch
 ActionForm::Base.prepend(Flap::CoreExt::ActionFormPatch)
+
+# Include ActiveModel::Validations::Callbacks in ActionForm::Base
+# so we can use *before_validation* in our contracts (form objects).
+ActionForm::Base.include(ActiveModel::Validations::Callbacks)
+
+# Patch Trailblazer with our patch
 Trailblazer::Rails::Controller.prepend(Flap::CoreExt::TrailblazerPatch)
