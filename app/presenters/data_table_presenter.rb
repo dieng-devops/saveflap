@@ -19,11 +19,6 @@ class DataTablePresenter < SimpleDelegator
   end
 
 
-  def head(label, opts = {})
-    head_for(nil, opts.merge(label: label))
-  end
-
-
   def head_for(column, opts = {})
     @column_names << column
     @columns << DataColumn.new(@view, column, opts)
@@ -118,11 +113,7 @@ class DataTablePresenter < SimpleDelegator
 
 
     def datatable_columns
-      data = []
-      @columns.each_with_index do |c, i|
-        data << { data: i }.merge(c.to_hash)
-      end
-      data
+      @columns.map(&:to_hash)
     end
 
 
