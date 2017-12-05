@@ -1,7 +1,7 @@
 class Admin::Users::Update < Trailblazer::Operation
 
   class Present < Trailblazer::Operation
-    step Model(User, :find_by)
+    step Model(User, :find)
     step Contract::Build(constant: Admin::Users::Contract::Update)
   end
 

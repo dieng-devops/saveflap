@@ -1,5 +1,5 @@
 class Admin::Users::Delete < Trailblazer::Operation
-  step Model(User, :find_by)
+  step Model(User, :find)
   step :delete!
 
   def delete!(options, model:, **)
