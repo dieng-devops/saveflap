@@ -594,7 +594,7 @@ DEPENDENCIES
   puma
   pundit
   pundit-matchers
-  rails (~> 5.1.4)
+  rails (~> 5.1)
   rails-erd
   rails-i18n
   rails_bootstrap_navbar
