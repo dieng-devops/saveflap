@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 # Rails
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1'
 
 # Configuration
 gem 'dotenv-rails'
@@ -28,10 +28,10 @@ gem 'devise'
 
 # Javascript
 gem 'mini_racer'
-gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'uglifier'
+gem 'jquery-rails'
 gem 'turbolinks'
+gem 'uglifier'
 
 # CSS
 gem 'sass-rails'
@@ -127,7 +127,6 @@ group :test, :development do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 
-  # Code coverage
   gem 'simplecov'
 
   gem 'trailblazer-test', git: 'https://github.com/trailblazer/trailblazer-test.git'
