@@ -17,6 +17,50 @@ module Contract
   end
 end
 
+# Define our own Trailblazer::Operation to apply strong_params policy (with Pundit)
+# on params injected in Trailblazer::Contract
+class Trailblazer::Operation
+  module Policy
+    module Pundit
+
+      def self.Params(policy_class, key:, method: :permitted_attributes, name: :default)
+        Policy.step Params.build(policy_class, key, method), name: name
+      end
+
+      module Params
+
+        def self.build(*args, &block)
+          Condition.new(*args, &block)
+        end
+
+        class Condition
+          def initialize(policy_class, key, method)
+            @policy_class, @key, @method = policy_class, key, method
+          end
+
+
+          def call(input, options)
+            if options['params'].respond_to?(:require)
+              policy = build_policy(options)
+              params = options['params'].require(@key.to_sym).permit(*policy.public_send(@method))
+              options['params'][@key.to_s] = params
+            end
+            Result.new(true, {})
+          end
+
+          private
+
+          def build_policy(options)
+            @policy_class.new(options['current_user'], options['model'])
+          end
+        end
+
+      end
+
+    end
+  end
+end
+
 module Flap
   module CoreExt
 

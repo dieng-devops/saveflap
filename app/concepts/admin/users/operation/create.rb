@@ -6,6 +6,7 @@ class Admin::Users::Create < Trailblazer::Operation
   end
 
   step Nested(Present)
+  step Policy::Pundit::Params(Admin::UserPolicy, key: :user, method: :permitted_attributes_for_create)
   step Contract::Validate(key: :user)
   step Contract::Persist()
   step :notify!

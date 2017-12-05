@@ -6,6 +6,7 @@ class Admin::Users::Password < Trailblazer::Operation
   end
 
   step Nested(Present)
+  step Policy::Pundit::Params(Admin::UserPolicy, key: :user, method: :permitted_attributes_for_update_password)
   step Contract::Validate(key: :user)
   step Contract::Persist()
   step :notify!
