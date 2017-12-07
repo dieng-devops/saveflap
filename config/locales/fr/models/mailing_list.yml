@@ -1,0 +1,16 @@
+fr:
+
+  activerecord:
+    icons:
+      mailing_list: fa-list
+
+    models:
+      mailing_list:
+        one: Mailing List
+        other: Mailing Lists
+
+    attributes:
+      mailing_list:
+        name: Nom
+        description: Description
+        enabled: Active?

@@ -1,0 +1,21 @@
+fr:
+
+  mailing_lists:
+    new_title: &new_title Nouvelle mailing list
+    edit_title: &edit_title Modifier la mailing list
+
+    index:
+      title: Mailing Lists
+      new: *new_title
+
+    new:
+      title: *new_title
+
+    create:
+      title: *new_title
+
+    edit:
+      title: *edit_title
+
+    update:
+      title: *edit_title

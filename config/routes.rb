@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     match 'account', to: 'my#account', as: 'my_account', via: [:get, :patch]
   end
 
+  resources :mailing_lists
+
   namespace :admin do
     root to: 'welcome#index', as: 'root'
 
