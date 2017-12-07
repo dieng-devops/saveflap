@@ -1,6 +1,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore .rspec
+/.rspec
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -26,3 +29,6 @@
 
 # Ignore generated doc
 /doc/flap
+
+# Ignore Deploy files
+/deploy/application.production.conf

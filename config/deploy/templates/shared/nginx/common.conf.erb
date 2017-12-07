@@ -1,0 +1,7 @@
+############
+# BACKENDS #
+############
+
+upstream <%= fetch(:application) %>-puma {
+  server unix:<%= remote_path_for(shared_path) %>/tmp/sockets/puma.sock fail_timeout=0;
+}

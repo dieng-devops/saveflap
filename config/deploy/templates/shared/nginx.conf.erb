@@ -1,0 +1,5 @@
+<%= render 'nginx/common.conf' %>
+<%- fetch(:nginx_vhosts, {}).each do |vhost, locals| -%>
+<%= render "nginx/#{vhost}.conf", locals: locals.merge(vhost: vhost) %>
+<%- end -%>
+<%= render 'nginx/redirects.conf' %>

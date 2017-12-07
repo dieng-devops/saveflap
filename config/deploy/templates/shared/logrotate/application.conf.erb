@@ -1,0 +1,16 @@
+<%- syslog_services.each do |log| -%>
+<%= remote_path_for(shared_path) %>/log/<%= log %>.log
+<%- end -%>
+{
+  daily
+  rotate 365
+  compress
+  dateext
+  missingok
+  notifempty
+  create 0640 <%= host.user %> <%= host.user %>
+  olddir <%= remote_path_for(shared_path) %>/log/archives/<%= fetch(:application) %>
+  postrotate
+    invoke-rc.d syslog-ng reload > /dev/null
+  endscript
+}

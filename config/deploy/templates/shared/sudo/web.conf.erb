@@ -1,0 +1,2 @@
+<%= host.user %> ALL=(root) NOPASSWD: /bin/cp <%= remote_path_for(shared_path) %>/config/nginx/nginx.conf /etc/nginx/sites-enabled/<%= fetch(:application) %>.conf
+<%= host.user %> ALL=(root) NOPASSWD: /bin/cp <%= remote_path_for(shared_path) %>/config/log/logrotate.nginx.conf /etc/logrotate.d/<%= fetch(:application) %>-nginx

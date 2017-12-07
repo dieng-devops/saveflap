@@ -1,0 +1,5 @@
+<% syslog_services.each do |log| %>
+destination d_rails_<%= fetch(:application) %>_<%= log %> { file("<%= remote_path_for(shared_path) %>/log/<%= log %>.log" owner("<%= host.user %>") group("<%= host.user %>") perm(0640)); };
+filter f_rails_<%= fetch(:application) %>_<%= log %> { program("<%= fetch(:application, 'rails') %>.<%= log %>"); };
+log { source(s_src); filter(f_rails_<%= fetch(:application) %>_<%= log %>); destination(d_rails_<%= fetch(:application) %>_<%= log %>); };
+<% end %>

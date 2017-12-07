@@ -1,0 +1,11 @@
+###############
+# BACK OFFICE #
+###############
+
+server {
+<%= render 'nginx/_base_app.conf', indent: 2 %>
+
+  location ~ ^/(sidekiq|logs)/ {
+    try_files $uri @rails_nologs;
+  }
+}

@@ -1,0 +1,83 @@
+server_name   <%= domain %>;
+root          <%= remote_path_for(deploy_to) %>/current/public;
+<%- if ssl == :custom -%>
+listen        443 ssl <%- if defined?(http2) && http2 == true -%>http2<% end %>;
+
+ssl on;
+ssl_certificate      <%= remote_path_for(shared_path) %>/config/ssl/server.crt;
+ssl_certificate_key  <%= remote_path_for(shared_path) %>/config/ssl/server.key;
+# add_header Strict-Transport-Security "max-age=31536000; includeSubdomains;";
+<%- elsif ssl == :lets_encrypt -%>
+listen        443 ssl <%- if defined?(http2) && http2 == true -%>http2<% end %>;
+
+ssl on;
+ssl_certificate      /etc/letsencrypt/live/<%= domain %>/fullchain.pem;
+ssl_certificate_key  /etc/letsencrypt/live/<%= domain %>/privkey.pem;
+# add_header Strict-Transport-Security "max-age=31536000; includeSubdomains;";
+<% else %>
+listen        80;
+<%- end -%>
+
+access_log    <%= remote_path_for(shared_path) %>/log/nginx.<%= vhost %>.access.log;
+error_log     <%= remote_path_for(shared_path) %>/log/nginx.<%= vhost %>.error.log;
+
+error_page 502 @maintenance;
+error_page 503 @maintenance;
+
+location / {
+  if (-f <%= remote_path_for(shared_path) %>/tmp/maintenance.txt) {
+    return 503;
+  }
+
+  try_files $uri @rails;
+}
+
+location @rails {
+  # Headers
+  include /etc/nginx/proxy_params;
+
+  <%- if defined?(xaccel) && xaccel == true -%>
+  # Set X-Accel-Mapping to use X-Accel-Redirect to speed up downloading of private files
+  proxy_set_header X-Accel-Mapping <%= remote_path_for(releases_path) %>/[\d]+/private/=/private_files/;
+  <%- end -%>
+
+  # Options
+  proxy_redirect     off;
+  proxy_read_timeout 300;
+
+  # Pass to Rails
+  proxy_pass http://<%= fetch(:application) %>-puma;
+}
+
+<%- if defined?(xaccel) && xaccel == true -%>
+location /private_files/ {
+  alias <%= remote_path_for(deploy_to) %>/current/private/;
+  internal;
+}
+<%- end -%>
+
+location @rails_nologs {
+  # Headers
+  include /etc/nginx/proxy_params;
+
+  # Options
+  proxy_redirect     off;
+  proxy_read_timeout 300;
+
+  # Disable logs
+  access_log off;
+
+  # Pass to Rails
+  proxy_pass http://<%= fetch(:application) %>-puma;
+}
+
+location @maintenance {
+  # Serve static assets if found.
+  if (-f $request_filename) {
+    break;
+  }
+
+  # Set root to the shared directory.
+  root <%= remote_path_for(shared_path) %>/public;
+  rewrite ^(.*)$ /maintenance.html break;
+}

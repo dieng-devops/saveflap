@@ -1,0 +1,34 @@
+#################
+# STATIC ASSETS #
+#################
+
+server {
+  server_name   <%= domain %>;
+  root          <%= remote_path_for(deploy_to) %>/current/public;
+  <%- if ssl -%>
+  listen        0.0.0.0:443;
+
+  ssl on;
+  ssl_certificate      <%= remote_path_for(shared_path) %>/config/ssl/server.crt;
+  ssl_certificate_key  <%= remote_path_for(shared_path) %>/config/ssl/server.key;
+  <% else %>
+  listen        0.0.0.0:80;
+  <%- end -%>
+
+  location / {
+    try_files $uri =404;
+  }
+
+  location /maintenance {
+    root <%= remote_path_for(shared_path) %>/public;
+  }
+
+  # Cross domain webfont access
+  location ^~ /assets/ {
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header Cache-Control 'public';
+    expires 1M;
+    access_log off;
+    gzip_static on;
+  }
+}
