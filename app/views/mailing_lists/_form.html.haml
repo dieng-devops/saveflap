@@ -4,12 +4,27 @@
       .panel-heading
       .panel-body
 
-        = easy_form_for @form, label_col: 'col-md-4', control_col: 'col-md-8' do |f|
+        = easy_form_for @form, label_col: 'col-md-2', control_col: 'col-md-8' do |f|
 
           = f.text_field :name, required: true
           = f.text_field :description
           = f.form_group do
             = f.check_box :enabled, label: MailingList.human_attribute_name('enabled')
 
+          = link_to_add_association icon('plus', t('.add_email')), f, :emails, data: { 'association-insertion-node': '#nested-fields > tbody', 'association-insertion-position': 'append' }
+
+          .table-responsive
+            %table.table{ id: 'nested-fields' }
+              %thead
+                %tr
+                  %th= Email.human_attribute_name('first_name')
+                  %th= Email.human_attribute_name('last_name')
+                  %th= Email.human_attribute_name('email')
+                  %th
+              %tbody
+                = f.fields_for :emails do |ff|
+                  = render 'email_fields', f: ff
+
           = f.form_group do
             = f.button nil, options_for_spinner_button
+            = link_to t('button.cancel'), mailing_lists_path, class: 'btn btn-default'

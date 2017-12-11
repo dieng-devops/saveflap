@@ -19,3 +19,6 @@ fr:
 
     update:
       title: *edit_title
+
+    form:
+      add_email: Ajouter une adresse

@@ -13,6 +13,7 @@
 #= require sb-admin
 #= require my-datatables
 #= require select2-full
+#= require action_form
 #= require turbolinks
 #= require_tree .
 #= require_self
