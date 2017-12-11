@@ -1,0 +1,16 @@
+fr:
+
+  activerecord:
+    icons:
+      email: fa-envelope-o
+
+    models:
+      email:
+        one: Email
+        other: Emails
+
+    attributes:
+      email:
+        first_name: Prénom
+        last_name: Nom
+        email: Email

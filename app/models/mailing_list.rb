@@ -1,6 +1,9 @@
 class MailingList < ApplicationRecord
 
-  # Validation
+  # Relations
+  has_many :emails
+
+  # Validations
   validates :name, uniqueness: true
 
 
