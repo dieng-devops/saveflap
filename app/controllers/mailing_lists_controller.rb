@@ -9,6 +9,11 @@ class MailingListsController < ApplicationController
   end
 
 
+  def show
+    run MailingLists::Show
+  end
+
+
   def new
     run MailingLists::Create::Present
   end

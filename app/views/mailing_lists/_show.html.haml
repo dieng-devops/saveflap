@@ -1,0 +1,14 @@
+%h2.page-header= @model
+
+%table.table
+  %thead
+    %tr
+      %th= Email.human_attribute_name('first_name')
+      %th= Email.human_attribute_name('last_name')
+      %th= Email.human_attribute_name('email')
+  %tbody
+    - @model.emails.each do |email|
+      %tr
+        %td= email.first_name
+        %td= email.last_name
+        %td= email.email
