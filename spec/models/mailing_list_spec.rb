@@ -8,4 +8,6 @@ describe MailingList do
 
   it { should be_valid }
 
+  ## Relations validation
+  it { should have_many(:emails).inverse_of(:mailing_list) }
 end

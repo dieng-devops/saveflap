@@ -5,7 +5,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Warden::Test::Helpers
   config.include FeaturesHelper
-  config.include Trailblazer::Test::Helper::Operation
+  config.include Trailblazer::Test::Operation::Helper
 
   config.color = true
   config.fail_fast = false
