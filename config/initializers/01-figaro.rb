@@ -25,7 +25,6 @@ APPLICATION_CONFIG = {
 
   app_config: %w(
     APPLICATION_DOMAIN
-    APPLICATION_URL
   ),
 
   monitoring_config: %w(

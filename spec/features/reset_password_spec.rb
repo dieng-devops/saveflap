@@ -4,7 +4,6 @@ feature 'Reset password', js: true do
 
   scenario 'Existing user can reset his password' do
     create_user(email: 'toto@example.net')
-    load_server_host
     visit main_app.root_path
     click_link 'Mot de passe oublié?'
     expect(page).to have_content('Entrez votre adresse email')

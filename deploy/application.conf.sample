@@ -19,7 +19,6 @@ SESSION_TIMEOUT=60
 
 # App config
 APPLICATION_DOMAIN=example.flap.com
-APPLICATION_URL=http://example.flap.com
 
 # Mail config
 SMTP_HOST=localhost
