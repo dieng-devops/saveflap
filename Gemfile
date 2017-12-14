@@ -113,6 +113,9 @@ gem 'pry-rails'
 # Pretty print objects Rails console
 gem 'awesome_print'
 
+# Ruby LDAP driver
+gem 'net-ldap'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
