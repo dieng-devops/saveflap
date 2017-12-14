@@ -2,9 +2,6 @@ require 'rails_helper'
 
 describe Admin::Users::Create do
 
-  VALID_MAIL_ADDRESSES   = %w(user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn).freeze
-  INVALID_MAIL_ADDRESSES = %w(user@foo,com user_at_foo.org example.user@foo.foo@bar_baz.com foo.bar.@gmail.com foo@bar+baz.com).freeze
-
   describe 'valid creation' do
     let(:user) { described_class.(user: attributes_for(:user, first_name: 'Bob').merge(create_options: 'generate')) }
 

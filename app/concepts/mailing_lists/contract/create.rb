@@ -10,6 +10,9 @@ module MailingLists::Contract
       attributes :first_name, required: true
       attributes :last_name,  required: true
       attributes :email,      required: true
+
+      validates :email, format: { with: ApplicationRecord::VALID_EMAIL_REGEX }
     end
+
   end
 end
