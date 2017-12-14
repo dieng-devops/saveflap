@@ -1,4 +1,8 @@
-%h2.page-header= @model
+%h2.page-header
+  = @model
+  .pull-right
+    = MailingList.human_attribute_name('enabled')
+    = bool_to_icon @model.enabled?
 
 %table.table
   %thead
