@@ -42,6 +42,12 @@ APPLICATION_CONFIG = {
     MAIL_FROM
   ),
 
+  ldap_config: %w(
+    LDAP_HOST
+    LDAP_PORT
+    LDAP_USER
+    LDAP_PASS
+  )
 }.freeze
 
 begin

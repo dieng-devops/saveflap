@@ -29,3 +29,9 @@ smtp_domain: <%= ENV['SMTP_DOMAIN'] %>
 smtp_user:   <%= ENV['SMTP_USER'] %>
 smtp_pass:   <%= ENV['SMTP_PASS'] %>
 mail_from:   <%= ENV['MAIL_FROM'] %>
+
+# LDAP config
+ldap_host: <%= ENV['LDAP_HOST'] %>
+ldap_port: <%= ENV['LDAP_PORT'] %>
+ldap_user: <%= ENV['LDAP_USER'] %>
+ldap_pass: <%= ENV['LDAP_PASS'] %>
