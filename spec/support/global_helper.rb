@@ -10,3 +10,9 @@ def create_object(klass, key, attributes = nil)
     { key => attributes_for(attributes) },
   )['model']
 end
+
+def stub_operation(klass)
+  fake_result = double('result')
+  expect(LDAP::Update).to receive(:call).and_return(fake_result)
+  expect(fake_result).to receive(:success?).and_return(true)
+end

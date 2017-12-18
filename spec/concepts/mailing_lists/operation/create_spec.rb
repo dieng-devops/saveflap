@@ -8,9 +8,7 @@ describe MailingLists::Create do
 
       it 'should be persisted' do
         # Stub LDAP::Update on MailingLists creation
-        fake_result = double('result')
-        expect(LDAP::Update).to receive(:call).and_return(fake_result)
-        expect(fake_result).to receive(:success?).and_return(true)
+        stub_operation(LDAP::Update)
 
         expect(result.success?).to be true
         expect(result['model'].persisted?).to be true
@@ -30,7 +28,13 @@ describe MailingLists::Create do
     end
 
     context 'when name is already taken' do
-      before { described_class.(mailing_list: attributes_for(:mailing_list_tb, name: 'Foo')) }
+      before {
+        # Stub LDAP::Update on MailingLists creation
+        stub_operation(LDAP::Update)
+
+        described_class.(mailing_list: attributes_for(:mailing_list_tb, name: 'Foo'))
+      }
+
       let(:result) { described_class.(mailing_list: attributes_for(:mailing_list_tb, name: 'Foo')) }
 
       it 'should not be persisted' do
