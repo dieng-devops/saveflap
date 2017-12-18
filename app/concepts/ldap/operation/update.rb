@@ -8,7 +8,7 @@ class LDAP::Update < Trailblazer::Operation
     ldap.modify dn: params[:dn], operations: params[:ops]
 
     if ldap.get_operation_result.code !=0
-      puts ldap.get_operation_result.message
+      Rails.logger.warn ldap.get_operation_result.message
       return false
     else
       return true
