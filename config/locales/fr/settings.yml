@@ -9,3 +9,4 @@ fr:
     smtp_config: Configuration SMTP
     domains_config: Configuration des noms de domaine
     monitoring_config: Configuration du monitoring
+    ldap_config: Configuration LDAP
