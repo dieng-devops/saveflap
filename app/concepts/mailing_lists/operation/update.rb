@@ -13,12 +13,6 @@ class MailingLists::Update < Trailblazer::Operation
 
 
   def update_ldap!(options, model:, **)
-    dn = "cn=#{model.name}, ou=Customers, dc=fraudbuster, dc=mobi"
-    ops = [
-      [:replace, :mail, model.emails.map(&:email)],
-    ]
-
-    result = LDAP::Update.(dn: dn, ops: ops)
-    result.success?
+    LDAP::Update.(name: model.name, emails: model.emails.map(&:email))
   end
 end

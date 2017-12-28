@@ -1,18 +1,21 @@
-class LDAP::Update < Trailblazer::Operation
-  step :update!
+class LDAP::Create < Trailblazer::Operation
+  step :create!
 
-  def update!(options, params:, **)
+  def create!(options, params:, **)
     name   = params[:name]
     emails = params[:emails]
 
     dn = "cn=#{name}, ou=Customers, dc=fraudbuster, dc=mobi"
 
-    ops = [
-      [:replace, :mail, emails],
-    ]
+    opts = {
+      cn:   name,
+      sn:   name,
+      mail: emails,
+      objectclass: ['top', 'inetOrgPerson'],
+    }
 
     instance = LDAPConnector.instance
-    instance.update(dn, ops)
+    instance.create(dn, opts)
 
     Rails.logger.warn instance.get_operation_result.message if instance.get_operation_result.code !=0
 

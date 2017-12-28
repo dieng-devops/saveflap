@@ -4,7 +4,7 @@ describe MailingLists::Update do
 
   let(:mailing_list) {
     # Stub LDAP::Update on MailingLists creation
-    stub_operation(LDAP::Update)
+    stub_operation(LDAP::Create)
     create_object(MailingLists::Create, :mailing_list, :mailing_list_tb)
   }
 

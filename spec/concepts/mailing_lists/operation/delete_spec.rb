@@ -3,12 +3,8 @@ require 'rails_helper'
 describe MailingLists::Delete do
 
   let(:mailing_list) {
-
     # Stub LDAP::Update on MailingLists creation
-    fake_result = double('result')
-    expect(LDAP::Update).to receive(:call).and_return(fake_result)
-    expect(fake_result).to receive(:success?).and_return(true)
-
+    stub_operation(LDAP::Create)
     create_object(MailingLists::Create, :mailing_list, :mailing_list_tb)
   }
 
