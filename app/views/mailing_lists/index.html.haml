@@ -10,7 +10,6 @@
         - @model.each do |mailing_list|
           %li.list-group-item
             = link_to mailing_list, mailing_list, remote: true
-            = mailing_list.description
             .pull-right
               = link_to icon('pencil', t('text.edit')), edit_mailing_list_path(mailing_list)
               = link_to icon('trash-o', t('text.delete')), mailing_list_path(mailing_list), method: :delete

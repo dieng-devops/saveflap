@@ -1,18 +1,20 @@
-%h2.page-header
-  = @model
-  .pull-right
-    = MailingList.human_attribute_name('enabled')
-    = bool_to_icon @model.enabled?
+.panel.panel-default
+  .panel-heading
+    = @model
+    .pull-right
+      = MailingList.human_attribute_name('enabled')
+      = bool_to_icon @model.enabled?
 
-%table.table
-  %thead
-    %tr
-      %th= Email.human_attribute_name('first_name')
-      %th= Email.human_attribute_name('last_name')
-      %th= Email.human_attribute_name('email')
-  %tbody
-    - @model.emails.each do |email|
+  .panel-body= @model.description
+  %table.table
+    %thead
       %tr
-        %td= email.first_name
-        %td= email.last_name
-        %td= email.email
+        %th= Email.human_attribute_name('first_name')
+        %th= Email.human_attribute_name('last_name')
+        %th= Email.human_attribute_name('email')
+    %tbody
+      - @model.emails.each do |email|
+        %tr
+          %td= email.first_name
+          %td= email.last_name
+          %td= email.email
