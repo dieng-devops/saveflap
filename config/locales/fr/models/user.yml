@@ -37,3 +37,8 @@ fr:
         last_connection: Dernière connexion
         never_connected: Jamais connecté
         connected: Connecté
+
+  activemodel:
+    attributes:
+      admin/users/contract/create:
+        create_options: Options du mot de passe
