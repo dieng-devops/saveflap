@@ -5,8 +5,8 @@ class Admin::Users::Update < Trailblazer::Operation
     step Contract::Build(constant: Admin::Users::Contract::Update)
   end
 
-  step Nested(Present)
   step Policy::Pundit::Params(Admin::UserPolicy, key: :user, method: :permitted_attributes_for_update)
+  step Nested(Present)
   step Contract::Validate(key: :user)
   step Contract::Persist()
 end
