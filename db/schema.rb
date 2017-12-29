@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171211145008) do
 
   create_table "mailing_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.boolean "enabled", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

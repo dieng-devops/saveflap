@@ -2,7 +2,7 @@ class CreateMailingLists < ActiveRecord::Migration[5.1]
   def change
     create_table :mailing_lists do |t|
       t.string  :name
-      t.string  :description
+      t.text    :description
       t.boolean :enabled, default: true
 
       t.timestamps null: false
