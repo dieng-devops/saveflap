@@ -10,9 +10,9 @@
                          url:    registration_path(resource),
                          html:   { method: :patch, id: 'my_password' } do |f|
 
-      = f.password_field :current_password, autocomplete: 'off'
+      = f.password_field :current_password, autocomplete: 'off', label_class: 'required'
       = f.password_field :password, autocomplete: 'off'
-      = f.password_field :password_confirmation, autocomplete: 'off'
+      = f.password_field :password_confirmation, autocomplete: 'off', label_class: 'required'
 
       = f.form_group do
         = f.button nil, class: 'btn btn-primary btn-outline'
