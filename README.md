@@ -7,7 +7,7 @@ Pré requis: les éléments suivants doivent d'abord être installés :
 * Mysql / MariaDB
 * Redis
 * [RVM](https://rvm.io/)
-* Ruby 2.4.3 (`rvm install 2.4.3`)
+* Ruby 2.5.0 (`rvm install 2.5.0`)
 
 1) On commence par installer les dépendances :
 
