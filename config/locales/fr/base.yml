@@ -1,6 +1,7 @@
 fr:
 
-  application_name: Flap!
+  app:
+    name: Flap!
 
   text:
     "yes": Oui

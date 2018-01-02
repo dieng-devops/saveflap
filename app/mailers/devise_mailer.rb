@@ -25,7 +25,7 @@ class DeviseMailer < Devise::Mailer
 
     def subject_for(key)
       subject = super
-      [t('application_name'), '::', subject].join(' ')
+      [t('app.name'), '::', subject].join(' ')
     end
 
 
