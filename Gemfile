@@ -151,6 +151,7 @@ group :development do
   gem 'capistrano-template'
 
   # Email preview
+  gem 'letter_opener', '~> 1.4.0'
   gem 'letter_opener_web'
 
   # SQL Queries optimizer
