@@ -10,7 +10,7 @@ node('libvirt') {
   }
 
   stage("Flap! - Build") {
-    withBundler('ruby-2.4.3', 'flap') {
+    withBundler('ruby-2.5.0', 'flap') {
       try {
         withEnv(["DB_NAME=flap_${env.BUILD_NUMBER}", "DB_USER=flap_${env.BUILD_NUMBER}", "DB_PASS=flap_${env.BUILD_NUMBER}"]) {
           sh "cp deploy/application.ci.conf ./.env"
