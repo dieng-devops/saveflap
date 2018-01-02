@@ -20,6 +20,16 @@ node('libvirt') {
         }
 
         updateGitlabCommitStatus(name: 'Flap!', state: 'success')
+
+        publishHTML(target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage',
+            reportFiles: 'index.html',
+            reportName: 'RCov Report'
+          ]
+        )
       }
       catch(Exception e) {
         updateGitlabCommitStatus(name: 'Flap!', state: 'failed')
