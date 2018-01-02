@@ -4,4 +4,4 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 require 'bundler/setup'
 
 # Speedup application loading (https://github.com/Shopify/bootsnap)
-require 'bootsnap/setup'
+# require 'bootsnap/setup'
