@@ -9,18 +9,6 @@ module Admin::Users::Contract
       attribute :email,      required: false
       attribute :language,   required: true
       attribute :time_zone,  required: true
-
-      # Validations
-      validate  :email_format
-    end
-
-
-    def email_format
-      return if email.nil?
-      matches = email.match(ApplicationRecord::VALID_EMAIL_REGEX)
-      return if matches.nil?
-      matches = matches.named_captures
-      errors.add(:email, :invalid) if matches.empty? || matches['mail'].end_with?('.')
     end
   end
 end
