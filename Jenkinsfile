@@ -1,15 +1,15 @@
 node('libvirt') {
   // Checkout repository first
-  stage("Flap! - Checkout") {
+  stage("Checkout") {
     checkout scm
   }
 
-  stage("Flap! - Setup") {
+  stage("Setup") {
     checkout scm
     sh "test_db_manager create flap ${env.BUILD_NUMBER}"
   }
 
-  stage("Flap! - Build") {
+  stage("Build") {
     withBundler('ruby-2.5.0', 'flap') {
       try {
         withEnv(["DB_NAME=flap_${env.BUILD_NUMBER}", "DB_USER=flap_${env.BUILD_NUMBER}", "DB_PASS=flap_${env.BUILD_NUMBER}"]) {
