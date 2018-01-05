@@ -1,10 +1,10 @@
 .row
-  .col-md-6
+  .col-md-8
     .panel.panel-default
       .panel-heading= @model
       .panel-body
 
-        = easy_form_for @form, label_col: 'col-md-2', control_col: 'col-md-8' do |f|
+        = easy_form_for @form, label_col: 'col-md-2', control_col: 'col-md-10' do |f|
 
           = f.text_field :name, required: true
           = f.text_area  :description, rows: 5

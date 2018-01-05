@@ -1,5 +1,5 @@
 %tr.nested-fields
-  %td= f.text_field  :first_name, skip_label: true, label_col: ''
-  %td= f.text_field  :last_name,  skip_label: true, label_col: ''
-  %td= f.email_field :email,      skip_label: true, label_col: ''
-  %td= link_to_remove_association icon('trash-o', t('text.delete')), f, data: { 'wrapper-class': 'nested-fields' }
+  %td= f.text_field  :first_name, skip_label: true, label_col: '', control_col: 'col-md-12'
+  %td= f.text_field  :last_name,  skip_label: true, label_col: '', control_col: 'col-md-12'
+  %td= f.email_field :email,      skip_label: true, label_col: '', control_col: 'col-md-12'
+  %td= link_to_remove_association icon('trash-o'), f, data: { 'wrapper-class': 'nested-fields' }
