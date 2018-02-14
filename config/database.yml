@@ -10,6 +10,9 @@ db_config: &db_config
 production:
   <<: *db_config
 
+staging:
+  <<: *db_config
+
 development:
   <<: *db_config
 

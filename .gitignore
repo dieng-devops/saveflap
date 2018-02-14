@@ -32,3 +32,4 @@
 
 # Ignore Deploy files
 /deploy/application.production.conf
+/deploy/application.staging.conf
