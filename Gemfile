@@ -39,7 +39,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 # Fonts
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '4.7.0'
 
 # View rendering
 gem 'haml-rails'
