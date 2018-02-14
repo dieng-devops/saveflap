@@ -4,6 +4,7 @@ lock '3.10.1'
 ## Base
 set :application, 'flap'
 set :repo_url,    'ssh://git@gitlab.fb.int:2230/team-system/flap.git'
+set :scm,         :gitcopy
 set :deploy_to,   '/home/flap'
 
 ## SSH
