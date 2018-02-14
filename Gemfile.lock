@@ -107,6 +107,8 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-scm-gitcopy (0.1.5)
+      capistrano (~> 3.0)
     capistrano-template (0.0.9)
       capistrano (~> 3.0)
     capybara (2.18.0)
@@ -562,6 +564,7 @@ DEPENDENCIES
   capistrano-foreman
   capistrano-rails
   capistrano-rvm
+  capistrano-scm-gitcopy
   capistrano-template
   capybara
   capybara-screenshot!

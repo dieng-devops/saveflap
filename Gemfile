@@ -149,6 +149,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-foreman'
   gem 'capistrano-template'
+  gem 'capistrano-scm-gitcopy'
 
   # Email preview
   gem 'letter_opener', '~> 1.4.0'
