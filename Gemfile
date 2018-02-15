@@ -16,7 +16,7 @@ gem 'puma'
 gem 'mysql2'
 
 # Redis
-gem 'redis', '~> 3.0'
+gem 'redis'
 gem 'hiredis'
 
 # Sessions and Cache
