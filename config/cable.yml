@@ -1,10 +1,16 @@
+cable_config: &cable_config
+  adapter: redis
+  url: <%= "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}/5" %>
+  channel_prefix: concerto
+
+production:
+  <<: *cable_config
+
 development:
-  adapter: async
+  <<: *cable_config
+
+staging:
+  <<: *cable_config
 
 test:
   adapter: async
-
-production:
-  adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: flap_production
