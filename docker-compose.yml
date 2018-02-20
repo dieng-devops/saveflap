@@ -1,0 +1,40 @@
+version: '3'
+services:
+  db:
+    image: mariadb:10.1
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: flap
+      MYSQL_PASSWORD: flap
+      MYSQL_DATABASE: flap
+
+  redis:
+    image: redis:4.0-alpine
+
+  syslog:
+    image: balabit/syslog-ng:latest
+
+  web:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=db
+      - REDIS_HOST=redis
+    command:
+      - foreman
+      - start
+      - web
+    ports:
+      - '5000:5000'
+    depends_on:
+      - db
+      - redis
+      - syslog
+    volumes:
+      - .:/app
+      - bundle_cache:/bundle
+
+volumes:
+  bundle_cache:
