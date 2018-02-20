@@ -87,7 +87,7 @@ GEM
     bootstrap_form (2.7.0)
     brakeman (4.1.1)
     builder (3.2.3)
-    bullet (5.7.2)
+    bullet (5.7.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11.0)
     capistrano (3.10.1)
@@ -325,7 +325,7 @@ GEM
       pundit (~> 1.1, >= 1.1.0)
       rspec-rails (>= 3.0.0)
     rack (2.0.4)
-    rack-protection (2.0.0)
+    rack-protection (2.0.1)
       rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
