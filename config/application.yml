@@ -1,0 +1,12 @@
+# Database config
+DB_ADAPTER: mysql2
+DB_HOST: 127.0.0.1
+DB_PORT: '3306'
+DB_POOL: '32'
+
+# Redis config
+REDIS_HOST: 127.0.0.1
+REDIS_PORT: '6379'
+
+# Devise
+SESSION_TIMEOUT: '60'
