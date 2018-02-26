@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MailingLists::Update < Trailblazer::Operation
 
   class Present < Trailblazer::Operation

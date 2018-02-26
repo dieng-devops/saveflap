@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users::Contract
   class Update < ActionForm::Base
     self.main_model = :user

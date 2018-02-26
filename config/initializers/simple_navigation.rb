@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 SimpleNavigation::Configuration.run do |navigation|
   navigation.auto_highlight       = true
   navigation.highlight_on_subpath = true

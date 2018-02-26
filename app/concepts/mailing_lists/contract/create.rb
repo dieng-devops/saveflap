@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MailingLists::Contract
   class Create < ActionForm::Base
     self.main_model = :mailing_list

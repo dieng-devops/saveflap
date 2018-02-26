@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Mailer
 Rails.application.config.action_mailer.default_options = { from: Settings.mail_from }
 

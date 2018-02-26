@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 HealthMonitor.configure do |config|
   config.basic_auth_credentials = {
     username: Settings.status_page_user,

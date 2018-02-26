@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Define some custome variables
 rails_path    = File.expand_path('../', __dir__)
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin::Users::Contract
   module UserAdmin
     extend ActiveSupport::Concern

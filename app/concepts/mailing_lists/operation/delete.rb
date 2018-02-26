@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MailingLists::Delete < Trailblazer::Operation
   step Model(MailingList, :find)
   step :delete!

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::Users::Update < Trailblazer::Operation
 
   class Present < Trailblazer::Operation

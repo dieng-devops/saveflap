@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchFormBuilder < BootstrapForm::FormBuilder
 
   def initialize(object_name, object, template, options)

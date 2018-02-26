@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DataColumn
 
   def initialize(view, name, opts = {})

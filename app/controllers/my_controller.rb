@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MyController < ApplicationController
 
   responders :flash

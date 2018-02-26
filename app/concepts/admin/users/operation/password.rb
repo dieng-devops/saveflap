@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::Users::Password < Trailblazer::Operation
 
   class Present < Trailblazer::Operation

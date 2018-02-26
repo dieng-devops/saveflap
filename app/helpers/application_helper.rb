@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
 
   def get_model_name_for(klass, pluralize: true)

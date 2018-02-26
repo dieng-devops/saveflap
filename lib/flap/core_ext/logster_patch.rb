@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'logster/logger'
 
 # See https://github.com/discourse/logster/issues/56

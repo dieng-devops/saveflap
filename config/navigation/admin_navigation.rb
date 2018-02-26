@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |menu|
     menu.dom_id = 'side-menu'

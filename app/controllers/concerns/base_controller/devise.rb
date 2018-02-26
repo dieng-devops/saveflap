@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BaseController
   module Devise
     extend ActiveSupport::Concern

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Check that all environment variables are present before running the application.
 
 APPLICATION_CONFIG = {

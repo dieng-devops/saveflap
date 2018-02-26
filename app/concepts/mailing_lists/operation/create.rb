@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MailingLists::Create < Trailblazer::Operation
 
   class Present < Trailblazer::Operation

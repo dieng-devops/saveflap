@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Define our own Result object to respect Trailblazer expectations
 # See: https://github.com/trailblazer/reform/blob/master/lib/reform/form/call.rb
 module Contract

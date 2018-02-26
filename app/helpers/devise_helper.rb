@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviseHelper
 
   # Define Devise registration_path ourselves because

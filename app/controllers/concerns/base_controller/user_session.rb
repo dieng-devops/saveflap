@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BaseController
   module UserSession
     extend ActiveSupport::Concern

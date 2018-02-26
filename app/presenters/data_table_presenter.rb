@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DataTablePresenter < SimpleDelegator
 
   attr_reader :dt_id, :column_names
