@@ -179,4 +179,5 @@ group :development do
   # Create project documentation
   gem 'sdoc'
   gem 'toml'
+  gem 'annotate'
 end
