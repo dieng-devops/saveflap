@@ -31,7 +31,7 @@ class DeviseMailer < Devise::Mailer
     end
 
 
-    def get_host_for_record(record)
+    def get_host_for_record(_record)
       Settings.application_domain
     end
 

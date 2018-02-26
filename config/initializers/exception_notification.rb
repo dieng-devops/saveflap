@@ -6,7 +6,7 @@ require 'exception_notification/sidekiq'
 ExceptionNotification.configure do |config|
   # Ignore additional exception types.
   # ActiveRecord::RecordNotFound, Mongoid::Errors::DocumentNotFound, AbstractController::ActionNotFound and ActionController::RoutingError are already added.
-  config.ignored_exceptions += %w{ActionController::InvalidAuthenticityToken}
+  config.ignored_exceptions += %w[ActionController::InvalidAuthenticityToken]
 
   # Adds a condition to decide when an exception must be ignored or not.
   # The ignore_if method can be invoked multiple times to add extra conditions.
@@ -18,7 +18,7 @@ ExceptionNotification.configure do |config|
 
   # Email notifier sends notifications by email.
   config.add_notifier :email, {
-    email_prefix:         "[Flap!] ",
+    email_prefix:         '[Flap!] ',
     sender_address:       Settings.mail_from,
     exception_recipients: Settings.mail_on_application_error
   }

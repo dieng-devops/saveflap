@@ -9,7 +9,7 @@ module Common
       alert:   'alert-danger',
       warning: 'alert-warning',
       info:    'alert-info',
-      notice:  'alert-info'
+      notice:  'alert-info',
     }.freeze
 
 
@@ -30,7 +30,7 @@ module Common
     def button_close
       content_tag(:button, class: 'close', data: { dismiss: 'alert' }) do
         content_tag(:span, '&times;'.html_safe, 'aria-hidden' => 'true') +
-        content_tag(:span, 'Close', class: 'sr-only')
+          content_tag(:span, 'Close', class: 'sr-only')
       end
     end
 

@@ -15,6 +15,7 @@ class LDAPConnector
 
   class << self
 
+    # rubocop:disable Metrics/MethodLength
     def instance
       return @instance if @instance
       @instance =
@@ -22,15 +23,16 @@ class LDAPConnector
           host: Settings.ldap_host,
           port: Settings.ldap_port,
           encryption: {
-            method: :start_tls
+            method: :start_tls,
           },
           auth: {
             method: :simple,
             username: Settings.ldap_user,
             password: Settings.ldap_pass,
-          }
+          },
         })
     end
+    # rubocop:enable Metrics/MethodLength
 
   end
 

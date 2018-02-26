@@ -17,6 +17,7 @@ module Flap
           raise "latency #{latency} is greater than #{default_latency}"
         end
 
+        # rubocop:disable Metrics/MethodLength
         def check_workers!
           return true if Settings.sidekiq_running_workers.size == Settings.sidekiq_workers.size
 
@@ -38,6 +39,7 @@ module Flap
 
           raise "\n#{message}"
         end
+        # rubocop:enable Metrics/MethodLength
 
     end
   end

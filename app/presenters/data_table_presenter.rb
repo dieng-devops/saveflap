@@ -4,6 +4,7 @@ class DataTablePresenter < SimpleDelegator
 
   attr_reader :dt_id, :column_names
 
+  # rubocop:disable Metrics/MethodLength
   def initialize(view, id, opts: {}, html_opts: {})
     super(view)
     @view           = view
@@ -19,6 +20,7 @@ class DataTablePresenter < SimpleDelegator
     @escape_strings = []
     @html_opts      = html_opts
   end
+  # rubocop:enable Metrics/MethodLength
 
 
   def head_for(column, opts = {})
@@ -57,6 +59,7 @@ class DataTablePresenter < SimpleDelegator
   end
 
 
+  # rubocop:disable Metrics/MethodLength
   def search_form(options = {}, &block)
     options.reverse_merge!({ builder: SearchFormBuilder })
     options[:html] ||= {}
@@ -64,19 +67,21 @@ class DataTablePresenter < SimpleDelegator
     options[:acts_like_form_tag] = true
     options[:datatable] = self
 
-    layout = case options[:layout]
+    layout =
+      case options[:layout]
       when :inline
-        "form-inline"
+        'form-inline'
       when :horizontal
-        "form-horizontal"
-    end
+        'form-horizontal'
+      end
 
     if layout
-      options[:html][:class] = [options[:html][:class], layout].compact.join(" ")
+      options[:html][:class] = [options[:html][:class], layout].compact.join(' ')
     end
 
     form_for('', options, &block)
   end
+  # rubocop:enable Metrics/MethodLength
 
 
   def search_field(field)

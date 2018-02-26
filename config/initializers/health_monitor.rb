@@ -3,7 +3,7 @@
 HealthMonitor.configure do |config|
   config.basic_auth_credentials = {
     username: Settings.status_page_user,
-    password: Settings.status_page_pass
+    password: Settings.status_page_pass,
   }
   config.cache
   config.redis.configure do |redis_config|

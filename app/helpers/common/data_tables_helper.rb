@@ -5,6 +5,7 @@ module Common
 
     DATATABLE_LENGTH_MENU = [5, 10, 25, 50, 100].freeze
 
+    # rubocop:disable Metrics/MethodLength
     def datatables_translations
       {
         processing:     t('datatables.processing'),
@@ -28,16 +29,17 @@ module Common
           sortDescending: t('datatables.aria.sortDescending'),
         },
         select: {
-          rows: t('datatables.select.rows')
+          rows: t('datatables.select.rows'),
         },
         buttons: {
           pageLength: {
-            :_    => t('datatables.buttons.pageLength._'),
-            :'-1' => t('datatables.buttons.pageLength.-1'),
-          }
-        }
+            _:    t('datatables.buttons.pageLength._'),
+            '-1': t('datatables.buttons.pageLength.-1'),
+          },
+        },
       }
     end
+    # rubocop:enable Metrics/MethodLength
 
 
     def datatable_default_options
@@ -56,7 +58,7 @@ module Common
     end
 
 
-    def datatables_for(id, opts: {}, html_opts: {}, &block)
+    def datatables_for(id, opts: {}, html_opts: {})
       datatable = DataTablePresenter.new(self, id, opts: opts, html_opts: html_opts)
       yield datatable if block_given?
       datatable
@@ -67,38 +69,38 @@ module Common
       email: {
         label: 'datatables.buttons.email',
         icon: 'envelope-o',
-        opts: { action: 'email' }
+        opts: { action: 'email' },
       },
       reset_selection: {
         label: 'datatables.buttons.reset_selection',
         icon: 'check-square-o',
-        opts: { action: 'reset_selection', method: 'post' }
+        opts: { action: 'reset_selection', method: 'post' },
       },
       reset_filters: {
         label: 'datatables.buttons.reset_filters',
         icon: 'refresh',
-        opts: { action: 'reset_filters' }
+        opts: { action: 'reset_filters' },
       },
       csv: {
         label: 'datatables.buttons.csv',
         icon: 'file-text-o',
-        opts: { extend: 'csv' }
+        opts: { extend: 'csv' },
       },
       excel: {
         label: 'datatables.buttons.excel',
         icon: 'file-excel-o',
-        opts: { extend: 'excel' }
+        opts: { extend: 'excel' },
       },
       pdf: {
         label: 'datatables.buttons.pdf',
         icon: 'file-pdf-o',
-        opts: { extend: 'pdf' }
+        opts: { extend: 'pdf' },
       },
       print: {
         label: 'datatables.buttons.print',
         icon: 'print',
-        opts: { extend: 'print' }
-      }
+        opts: { extend: 'print' },
+      },
     }.freeze
 
 
@@ -139,7 +141,7 @@ module Common
         filter_default_label: [label_filter_by('date_start', false), label_filter_by('date_end', false)],
         date_format: 'dd/mm/yyyy',
         datepicker_type: 'jquery-ui',
-        filter_plugin_options: { changeMonth: true, changeYear: true }
+        filter_plugin_options: { changeMonth: true, changeYear: true },
       }
     end
 

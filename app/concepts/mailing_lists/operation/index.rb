@@ -4,6 +4,6 @@ class MailingLists::Index < Trailblazer::Operation
   step :model!
 
   def model!(options, *)
-    options["model"] = MailingList.all.order(name: :asc)
+    options['model'] = MailingList.all.order(name: :asc)
   end
 end

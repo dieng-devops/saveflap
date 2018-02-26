@@ -14,7 +14,7 @@ class MailingLists::Create < Trailblazer::Operation
   step :update_ldap!
 
 
-  def update_ldap!(options, model:, **)
+  def update_ldap!(_options, model:, **)
     LDAP::Create.(name: model.name, emails: model.emails.map(&:email))
   end
 end

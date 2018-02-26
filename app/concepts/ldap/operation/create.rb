@@ -3,7 +3,8 @@
 class LDAP::Create < Trailblazer::Operation
   step :create!
 
-  def create!(options, params:, **)
+  # rubocop:disable Metrics/MethodLength
+  def create!(_options, params:, **)
     name   = params[:name]
     emails = params[:emails]
 
@@ -13,14 +14,15 @@ class LDAP::Create < Trailblazer::Operation
       cn:   name,
       sn:   name,
       mail: emails,
-      objectclass: ['top', 'inetOrgPerson'],
+      objectclass: %w[top inetOrgPerson],
     }
 
     instance = LDAPConnector.instance
     instance.create(dn, opts)
 
-    Rails.logger.warn instance.get_operation_result.message if instance.get_operation_result.code !=0
+    Rails.logger.warn instance.get_operation_result.message if instance.get_operation_result.code != 0
 
     true
   end
+  # rubocop:enable Metrics/MethodLength
 end

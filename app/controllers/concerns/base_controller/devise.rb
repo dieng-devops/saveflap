@@ -45,7 +45,7 @@ module BaseController
         if last_request_at.is_a? Integer
           last_request_at = Time.at(last_request_at).utc
         elsif last_request_at.is_a? String
-          last_request_at = Time.parse(last_request_at)
+          last_request_at = Time.zone.parse(last_request_at)
         end
 
         current_user.update_columns(last_request_at: last_request_at)

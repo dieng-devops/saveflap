@@ -14,7 +14,7 @@ module Contract
     end
 
     def failure?
-      ! @success
+      !@success
     end
   end
 end
@@ -41,7 +41,7 @@ class Trailblazer::Operation
           end
 
 
-          def call(input, options)
+          def call(_input, options)
             if options['params'].respond_to?(:require)
               policy = build_policy(options)
               params = options['params'].require(@key.to_sym).permit(*policy.public_send(@method))
@@ -86,8 +86,8 @@ module Flap
           *_run_runtime_options(*dependencies)
         )
 
-        @form  = result["contract.default"]
-        @model = result["model"]
+        @form  = result['contract.default']
+        @model = result['model']
 
         yield(result) if result.success? && block_given?
 

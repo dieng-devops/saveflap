@@ -8,6 +8,7 @@ class Settings < Settingslogic
   include ActiveModel::Conversion
 
 
+  # rubocop:disable Metrics/MethodLength
   def grouped(nb = 4)
     grouped = []
     APPLICATION_CONFIG.keys.in_groups_of(nb).each do |keys|
@@ -28,6 +29,7 @@ class Settings < Settingslogic
     grouped << sidekiq_config
     grouped
   end
+  # rubocop:enable Metrics/MethodLength
 
 
   def sidekiq_config
@@ -43,7 +45,7 @@ class Settings < Settingslogic
 
 
   def sidekiq_workers
-    @sidekiq_workers ||= sidekiq_config.map { |k, v| SidekiqWorker.new(k ,v) }
+    @sidekiq_workers ||= sidekiq_config.map { |k, v| SidekiqWorker.new(k, v) }
   end
 
 

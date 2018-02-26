@@ -15,7 +15,7 @@ module Admin::Users::Contract
       attr_accessor :send_by_mail
 
       # Validations
-      validates :create_options, presence: true, inclusion: { in: %w(generate manual) }
+      validates :create_options, presence: true, inclusion: { in: %w[generate manual] }
     end
 
 

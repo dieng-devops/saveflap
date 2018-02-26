@@ -16,5 +16,5 @@ Rails.application.config.action_mailer.smtp_settings = {
   user_name:      Settings.smtp_user,
   password:       Settings.smtp_pass,
   authentication: :plain,
-  enable_starttls_auto: true
+  enable_starttls_auto: true,
 }

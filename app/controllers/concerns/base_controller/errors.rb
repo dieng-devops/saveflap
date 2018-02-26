@@ -4,13 +4,13 @@ module BaseController
   module Errors
     extend ActiveSupport::Concern
 
-    def render_403(pundit_exception = nil)
+    def render_403(_pundit_exception = nil)
       render_4xx_error(t('errors.not_authorized'), 403)
       return false
     end
 
 
-    def render_404(pundit_exception = nil)
+    def render_404(_pundit_exception = nil)
       render_4xx_error(t('errors.file_not_found'), 404)
       return false
     end

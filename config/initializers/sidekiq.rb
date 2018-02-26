@@ -21,10 +21,12 @@ end
 #
 
 if Rails.env.production?
-  Sidekiq.logger = Syslogger.new("flap.worker", nil, Syslog::LOG_LOCAL7)
+  Sidekiq.logger = Syslogger.new('flap.worker', nil, Syslog::LOG_LOCAL7)
   Sidekiq.logger.level = Logger::WARN
 
   class SidekiqLogsterReporter < Sidekiq::ExceptionHandler::Logger
+
+    # rubocop:disable Metrics/MethodLength
     def call(ex, context = {})
       # Pass context to Logster
       fake_env = {}
@@ -47,6 +49,7 @@ if Rails.env.production?
       Thread.current[Logster::Logger::LOGSTER_ENV] = nil
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   Sidekiq.error_handlers << SidekiqLogsterReporter.new
 end

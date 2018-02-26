@@ -15,7 +15,7 @@ module DatatableFilters
 
   def filter_on_column?(column_filter:)
     value = params.dig('columns', column_filter, 'search', 'value')
-    !value.blank?
+    value.present?
   end
 
 
@@ -46,7 +46,7 @@ module DatatableFilters
     def select_options_for_deleted_state
       [
         { value: 'active', label: t('text.state.active') },
-        { value: 'deleted', label: t('text.state.deleted') }
+        { value: 'deleted', label: t('text.state.deleted') },
       ]
     end
 
@@ -54,7 +54,7 @@ module DatatableFilters
     def select_options_for_boolean
       [
         { value: 1, label: t('text.yes') },
-        { value: 0, label: t('text.no') }
+        { value: 0, label: t('text.no') },
       ]
     end
 
@@ -62,7 +62,7 @@ module DatatableFilters
     def select_options_for_user_enabled_status
       [
         { value: 1, label: t('text.state.active') },
-        { value: 0, label: t('text.state.locked') }
+        { value: 0, label: t('text.state.locked') },
       ]
     end
 

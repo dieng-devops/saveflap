@@ -6,7 +6,7 @@ class MyController < ApplicationController
   respond_to :html
 
 
-  def account(options = {})
+  def account
     if request.get?
       run Users::Update::Present
     else

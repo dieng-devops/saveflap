@@ -3,7 +3,7 @@
 module Common
   module LabelsHelper
 
-    LABELS = %w(default success info danger warning primary).freeze
+    LABELS = %w[default success info danger warning primary].freeze
 
     LABELS.each do |name|
       define_method("label_with_#{name}_tag") do |label = nil, opts = {}, &block|

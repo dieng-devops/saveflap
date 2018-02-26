@@ -6,11 +6,11 @@ class MailingLists::Delete < Trailblazer::Operation
   step :update_ldap!
 
 
-  def delete!(options, model:, **)
+  def delete!(_options, model:, **)
     model.destroy
   end
 
-  def update_ldap!(options, model:, **)
+  def update_ldap!(_options, model:, **)
     LDAP::Delete.(name: model.name)
   end
 end

@@ -21,7 +21,6 @@ module Admin
     end
 
 
-    # rubocop:disable Metrics/MethodLength
     def data
       records.map do |record|
         {
@@ -35,7 +34,6 @@ module Admin
         }
       end
     end
-    # rubocop:enable Metrics/MethodLength
 
 
     def additional_datas

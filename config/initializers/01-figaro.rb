@@ -3,53 +3,53 @@
 # Check that all environment variables are present before running the application.
 
 APPLICATION_CONFIG = {
-  rails_config: %w(
+  rails_config: %w[
     SECRET_KEY_BASE
-  ),
+  ],
 
-  db_config: %w(
+  db_config: %w[
     DB_ADAPTER
     DB_HOST
     DB_PORT
     DB_NAME
     DB_USER
     DB_PASS
-  ),
+  ],
 
-  redis_config: %w(
+  redis_config: %w[
     REDIS_HOST
     REDIS_PORT
-  ),
+  ],
 
-  devise_config: %w(
+  devise_config: %w[
     SESSION_TIMEOUT
-  ),
+  ],
 
-  app_config: %w(
+  app_config: %w[
     APPLICATION_DOMAIN
-  ),
+  ],
 
-  monitoring_config: %w(
+  monitoring_config: %w[
     MAIL_ON_APPLICATION_ERROR
     STATUS_PAGE_USER
     STATUS_PAGE_PASS
-  ),
+  ],
 
-  smtp_config: %w(
+  smtp_config: %w[
     SMTP_HOST
     SMTP_PORT
     SMTP_DOMAIN
     SMTP_USER
     SMTP_PASS
     MAIL_FROM
-  ),
+  ],
 
-  ldap_config: %w(
+  ldap_config: %w[
     LDAP_HOST
     LDAP_PORT
     LDAP_USER
     LDAP_PASS
-  )
+  ],
 }.freeze
 
 begin

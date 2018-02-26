@@ -15,7 +15,7 @@ REDIS_DB_MAP = %w[
   logster
   cache
   cable
-]
+].freeze
 
 module Flap
   class Application < Rails::Application

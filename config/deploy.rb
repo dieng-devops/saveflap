@@ -13,7 +13,7 @@ set :deploy_to,   '/home/flap'
 set :ssh_options, {
   keys:          [File.join(Dir.home, '.ssh', 'id_rsa')],
   forward_agent: true,
-  auth_methods:  %w(publickey)
+  auth_methods:  %w[publickey],
 }
 
 ## RVM
@@ -37,7 +37,7 @@ set :keep_assets, 1
 ## Foreman
 set :foreman_roles,       :app
 set :foreman_init_system, 'systemd'
-set :foreman_services,    %w(web)
+set :foreman_services,    %w[web]
 set :foreman_export_path, "#{deploy_to}/.config/systemd/user"
 set :foreman_options,     {
   template: "#{deploy_to}/.foreman/templates/systemd",
@@ -48,12 +48,12 @@ set :foreman_options,     {
 ## Config
 set :deploy_config, {
   configure_services: %w[nginx syslog logrotate],
-  syslog_services: %w[web]
+  syslog_services: %w[web],
 }
 
 ## Nginx
 set :nginx_vhosts, {
-  back: { domain: 'flap.net', ssl: false }
+  back: { domain: 'flap.net', ssl: false },
 }
 
 ## Deployment steps

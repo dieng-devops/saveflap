@@ -3,7 +3,7 @@
 class LDAP::Update < Trailblazer::Operation
   step :update!
 
-  def update!(options, params:, **)
+  def update!(_options, params:, **)
     name   = params[:name]
     emails = params[:emails]
 
@@ -16,7 +16,7 @@ class LDAP::Update < Trailblazer::Operation
     instance = LDAPConnector.instance
     instance.update(dn, ops)
 
-    Rails.logger.warn instance.get_operation_result.message if instance.get_operation_result.code !=0
+    Rails.logger.warn instance.get_operation_result.message if instance.get_operation_result.code != 0
 
     true
   end
