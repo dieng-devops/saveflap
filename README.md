@@ -1,6 +1,6 @@
 # Flap (FraudBuster LDAP Account Provisioner)
 
-## Bootstraper le projet
+## Bootstraper le projet sur sa machine
 
 Pré requis: les éléments suivants doivent d'abord être installés :
 
@@ -9,20 +9,20 @@ Pré requis: les éléments suivants doivent d'abord être installés :
 * [RVM](https://rvm.io/)
 * Ruby 2.5.0 (`rvm install 2.5.0`)
 
-1) On commence par installer les dépendances :
+1) On commence par cloner le projet et installer les dépendances :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER$ git clone ssh://git@gitlab.fb.int:2230/team-system/flap.git
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER$ cd flap
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bundle install
+nicolas@desktop:~/PROJECTS$ git clone ssh://git@gitlab.fb.int:2230/team-system/flap.git
+nicolas@desktop:~/PROJECTS$ cd flap
+nicolas@desktop:~/PROJECTS/flap$ bundle install
 ```
 
 
 2) On créé ensuite le fichier de configuration de l'application à partir du [template fourni](/deploy/application.conf.sample) et on le customize :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ cp deploy/application.conf.sample .env
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ (vi/subl/emacs/nano/eclipse) .env
+nicolas@desktop:~/PROJECTS/flap$ cp deploy/application.conf.sample .env
+nicolas@desktop:~/PROJECTS/flap$ (subl/vi/emacs/nano/eclipse/atom) .env
 ```
 
 **Note :**
@@ -34,24 +34,49 @@ nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ (vi/subl/emacs/nano/eclipse) .env
 3) On initialise la base de données :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/rails db:migrate
+nicolas@desktop:~/PROJECTS/flap$ bin/rails db:migrate
 ```
 
 
 4) On créé le premier utilisateur :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/rails app:first_install
+nicolas@desktop:~/PROJECTS/flap$ bin/rails app:first_install
 ```
 
 
 5) On démarre le serveur :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/rails s
+nicolas@desktop:~/PROJECTS/flap$ bin/rails s
 ```
 
 L'application doit être accessible à cette adresse : http://localhost:5000
+
+
+## Bootstraper le projet avec Docker
+
+```sh
+nicolas@laptop:~/PROJECTS/flap$ docker-compose up
+nicolas@laptop:~/PROJECTS/flap$ docker-compose exec web rails db:migrate
+nicolas@laptop:~/PROJECTS/flap$ docker-compose exec web rails app:first_install
+```
+
+L'application doit être accessible à cette adresse : http://localhost:5000
+
+
+## Lancer les tests
+
+```sh
+nicolas@desktop:~/PROJECTS/flap$ bin/rspec
+```
+
+
+## Générer la documentation
+
+```sh
+nicolas@desktop:~/PROJECTS/flap$ bin/rails rdoc
+```
 
 
 ## Déployer en production
@@ -59,8 +84,8 @@ L'application doit être accessible à cette adresse : http://localhost:5000
 1) On commence par se mettre sur la branche `master` et on crée une nouvelle release :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ git checkout master
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/release_manager release
+nicolas@desktop:~/PROJECTS/flap$ git checkout master
+nicolas@desktop:~/PROJECTS/flap$ bin/release_manager release
 ```
 
 **Note :**
@@ -72,26 +97,12 @@ nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/release_manager release
 2) On pousse la nouvelle release sur Git :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/release_manager push
+nicolas@desktop:~/PROJECTS/flap$ bin/release_manager push
 ```
 
 
 3) On déploie avec Capistrano :
 
 ```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ cap production deploy
-```
-
-
-## Lancer les tests
-
-```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/rspec
-```
-
-
-## Générer la documentation
-
-```sh
-nicolas@desktop:~/PROJECTS/FRAUDBUSTER/flap$ bin/rails rdoc
+nicolas@desktop:~/PROJECTS/flap$ cap production deploy
 ```
