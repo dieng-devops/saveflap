@@ -17,11 +17,11 @@ describe MailingLists::Update do
 
         result =
           described_class.(
-            { id: mailing_list.id, mailing_list: { name: 'Foo' } },
+            { id: mailing_list.id, mailing_list: { name: 'bar@bar.com' } },
           )
 
         expect(result.success?).to be true
-        expect(result['model'].name).to eq 'Foo'
+        expect(result['model'].name).to eq 'bar@bar.com'
       end
     end
   end

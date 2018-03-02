@@ -8,6 +8,8 @@ module MailingLists::Contract
     attribute :description
     attribute :enabled
 
+    validates :name, format: { with: ApplicationRecord::VALID_EMAIL_REGEX }
+
     association :emails do
       attributes :first_name, required: true
       attributes :last_name,  required: true
