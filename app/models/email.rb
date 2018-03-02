@@ -18,6 +18,9 @@ class Email < ApplicationRecord
   # Relations
   belongs_to :mailing_list, inverse_of: :emails
 
+  # Validations
+  validates :email, uniqueness: { scope: :mailing_list_id }
+
 
   def to_s
     email
