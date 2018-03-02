@@ -32,7 +32,7 @@ else
   bind socket_file
 end
 
-if %w[production].include?(current_env)
+if %w[production staging].include?(current_env)
   state_path           state_file
   stdout_redirect      stdout_file, stderr_file
   activate_control_app control_file
