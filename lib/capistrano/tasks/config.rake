@@ -21,6 +21,7 @@ namespace :config do
     Rake::Task["config:app:generate"].invoke
     Rake::Task["config:sudo:generate"].invoke
     Rake::Task["config:bash:generate"].invoke
+    Rake::Task["config:systemd:generate"].invoke
 
     # Invoke additional tasks
     configure_services.each do |template|
@@ -84,13 +85,25 @@ namespace :config do
         # Create bin dir
         execute 'mkdir', '-p', "#{deploy_to}/bin"
 
-        # Install wrapper script around systemd services
-        services = fetch(:foreman_services, [])
-        template 'bash/systemd_wrapper.sh', "#{deploy_to}/bin/#{fetch(:application)}", 0755, locals: { services: services }
-
         %w[.bash_profile .zlogin .zshrc .mkshrc].each do |file|
           execute 'rm', '-f', file
         end
+      end
+    end
+  end
+
+
+  namespace :systemd do
+    desc 'Install systemd files'
+    task :generate do
+      on roles(:app) do |host|
+        # Install wrapper script around systemd services
+        services = fetch(:foreman_services, [])
+        template 'systemd/wrapper.sh', "#{deploy_to}/bin/#{fetch(:application)}", 0755, locals: { services: services }
+
+        # Install wrapper script for /etc/init.d/
+        execute 'mkdir', '-p', "#{shared_path}/config/systemd"
+        template 'systemd/init.sh', "#{shared_path}/config/systemd/#{fetch(:application)}", 0755
       end
     end
   end
