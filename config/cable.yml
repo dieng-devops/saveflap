@@ -1,7 +1,7 @@
 cable_config: &cable_config
   adapter: redis
   url: <%= "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}/5" %>
-  channel_prefix: concerto
+  channel_prefix: flap
 
 production:
   <<: *cable_config
