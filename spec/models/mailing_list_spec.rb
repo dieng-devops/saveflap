@@ -8,10 +8,11 @@
 #  enabled     :boolean          default(TRUE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  email       :string(255)
 #
 # Indexes
 #
-#  index_mailing_lists_on_name  (name) UNIQUE
+#  index_mailing_lists_on_email  (email) UNIQUE
 #
 
 require 'rails_helper'

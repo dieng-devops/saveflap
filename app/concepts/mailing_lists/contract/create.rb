@@ -4,11 +4,12 @@ module MailingLists::Contract
   class Create < ActionForm::Base
     self.main_model = :mailing_list
 
-    attribute :name, required: true
+    attribute :name,  required: true
+    attribute :email, required: true
     attribute :description
     attribute :enabled
 
-    validates :name, format: { with: ApplicationRecord::VALID_EMAIL_REGEX }
+    validates :email, format: { with: ApplicationRecord::VALID_EMAIL_REGEX }
 
     association :emails do
       attributes :first_name, required: true

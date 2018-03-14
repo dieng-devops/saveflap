@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211145008) do
+ActiveRecord::Schema.define(version: 20180314145651) do
 
   create_table "emails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "mailing_list_id"
@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20171211145008) do
     t.boolean "enabled", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_mailing_lists_on_name", unique: true
+    t.string "email"
+    t.index ["email"], name: "index_mailing_lists_on_email", unique: true
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

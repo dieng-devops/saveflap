@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: mailing_lists
@@ -10,10 +9,11 @@
 #  enabled     :boolean          default(TRUE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  email       :string(255)
 #
 # Indexes
 #
-#  index_mailing_lists_on_name  (name) UNIQUE
+#  index_mailing_lists_on_email  (email) UNIQUE
 #
 
 class MailingList < ApplicationRecord
@@ -22,7 +22,7 @@ class MailingList < ApplicationRecord
   has_many :emails, inverse_of: :mailing_list, dependent: :destroy
 
   # Validations
-  validates :name, uniqueness: true
+  validates :email, uniqueness: true
 
 
   def to_s
