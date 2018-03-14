@@ -4,9 +4,9 @@ class LDAP::Delete < Trailblazer::Operation
   step :delete!
 
   def delete!(_options, params:, **)
-    name = params[:name]
+    email = params[:email]
 
-    dn = "cn=#{name}, ou=Customers, dc=fraudbuster, dc=mobi"
+    dn = "cn=#{email}, ou=Customers, dc=fraudbuster, dc=mobi"
 
     instance = LDAPConnector.instance
     instance.delete(dn)

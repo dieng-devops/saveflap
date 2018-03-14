@@ -4,10 +4,10 @@ class LDAP::Update < Trailblazer::Operation
   step :update!
 
   def update!(_options, params:, **)
-    name   = params[:name]
+    email  = params[:email]
     emails = params[:emails]
 
-    dn = "cn=#{name}, ou=Customers, dc=fraudbuster, dc=mobi"
+    dn = "cn=#{email}, ou=Customers, dc=fraudbuster, dc=mobi"
 
     ops = [
       [:replace, :mail, emails],
