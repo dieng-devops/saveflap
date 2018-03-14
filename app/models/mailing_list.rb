@@ -24,8 +24,4 @@ class MailingList < ApplicationRecord
   # Validations
   validates :email, uniqueness: true
 
-
-  def to_s
-    name
-  end
 end

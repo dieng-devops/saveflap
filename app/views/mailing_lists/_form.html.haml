@@ -1,7 +1,7 @@
 .row
   .col-md-8
     .panel.panel-default
-      .panel-heading= @model
+      .panel-heading= @model.name
       .panel-body
 
         = easy_form_for @form, label_col: 'col-md-2', control_col: 'col-md-10' do |f|

@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-heading
-    = @model
+    = @model.name
     .pull-right
       = MailingList.human_attribute_name('enabled')
       = bool_to_icon @model.enabled?
