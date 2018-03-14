@@ -144,6 +144,7 @@ group :development do
   # Rails test server
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'spring-commands-rubocop'
 
   # Deployment
   gem 'capistrano'
