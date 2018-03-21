@@ -97,9 +97,9 @@ describe LDAPConnector do
       before { create_item }
 
       it 'should return entry' do
-        entry = valid_instance.find('liste1@external.fraudbuster.mobi', 'dc=fraudbuster, dc=mobi')
+        entry = valid_instance.find('foo@external.fraudbuster.mobi', 'dc=fraudbuster, dc=mobi')
         expect(entry).to be_a Net::LDAP::Entry
-        expect(entry.dn).to eq 'cn=liste1@external.fraudbuster.mobi,ou=Customers,dc=fraudbuster,dc=mobi'
+        expect(entry.dn).to eq 'cn=foo@external.fraudbuster.mobi,ou=Customers,dc=fraudbuster,dc=mobi'
       end
 
       after { delete_item }
