@@ -15,7 +15,7 @@ gem 'settingslogic'
 gem 'puma'
 
 # Database
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.10'
 
 # Redis
 gem 'redis'
