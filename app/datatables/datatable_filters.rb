@@ -3,6 +3,16 @@
 module DatatableFilters
   extend ActiveSupport::Concern
 
+  def selected
+    @selected ||= (options[:selected] || [])
+  end
+
+
+  def from_selection
+    @from_selection ||= (options[:from_selection] || [])
+  end
+
+
   def filter_on_deleted(column_filter:)
     @filter_on_deleted ||= check_deleted_filter(column_filter)
   end
@@ -45,24 +55,24 @@ module DatatableFilters
 
     def select_options_for_deleted_state
       [
-        { value: 'active', label: t('text.state.active') },
-        { value: 'deleted', label: t('text.state.deleted') },
+        { value: 'active', label: I18n.t('text.state.active') },
+        { value: 'deleted', label: I18n.t('text.state.deleted') },
       ]
     end
 
 
     def select_options_for_boolean
       [
-        { value: 1, label: t('text.yes') },
-        { value: 0, label: t('text.no') },
+        { value: 1, label: I18n.t('text.yes') },
+        { value: 0, label: I18n.t('text.no') },
       ]
     end
 
 
     def select_options_for_user_enabled_status
       [
-        { value: 1, label: t('text.state.active') },
-        { value: 0, label: t('text.state.locked') },
+        { value: 1, label: I18n.t('text.state.active') },
+        { value: 0, label: I18n.t('text.state.locked') },
       ]
     end
 

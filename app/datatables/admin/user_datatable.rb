@@ -3,10 +3,7 @@
 module Admin
   class UserDatatable < AjaxDatatablesRails::Base
 
-    include DatatableHelper
     include DatatableFilters
-
-    def_delegators :@view, :edit_admin_user_path, :admin_user_path
 
 
     def view_columns
@@ -24,13 +21,13 @@ module Admin
     def data
       records.map do |record|
         {
-          first_name:      link_to(record.full_name, edit_admin_user_path(record)),
-          email:           mail_to(record.email),
-          admin:           bool_to_icon(record.admin?),
-          last_sign_in_at: render_connection_status(record),
-          actions:         render_record_actions(record),
-          enabled:         record.enabled?,
-          'DT_RowId' => record.id,
+          first_name:      record.decorate.link_to,
+          email:           record.decorate.email,
+          admin:           record.decorate.admin?,
+          last_sign_in_at: record.decorate.connection_status,
+          actions:         record.decorate.dt_actions,
+          enabled:         record.decorate.enabled?,
+          DT_RowId:        record.id,
         }
       end
     end
@@ -44,27 +41,9 @@ module Admin
     end
 
 
-    private
-
-
-      def get_raw_records
-        User.send(*filter_on_active(column_filter: '5'))
-      end
-
-
-      def render_connection_status(record)
-        if record.currently_logged_in?
-          label = icon('check', ::User.human_attribute_name('connected'))
-          label_with_primary_tag(label)
-        else
-          ll(record.last_sign_in_at, default: ::User.human_attribute_name('never_connected'))
-        end
-      end
-
-
-      def render_record_actions(record)
-        record.super_admin? ? '' : link_to(icon('trash-o', t('text.delete')), admin_user_path(record), remote: true, method: :delete, data: { confirm: t('text.are_you_sure') })
-      end
+    def get_raw_records
+      User.send(*filter_on_active(column_filter: '5'))
+    end
 
   end
 end

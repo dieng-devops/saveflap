@@ -75,6 +75,9 @@ gem 'actionform', git: 'https://github.com/jbox-web/actionform.git', require: 'a
 # Automatic flash messages
 gem 'responders'
 
+# Decorate models
+gem 'draper'
+
 # Authorizations
 gem 'pundit'
 
