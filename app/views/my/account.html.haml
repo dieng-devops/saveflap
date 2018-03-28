@@ -1,4 +1,4 @@
-%h2.page-header= current_user
+%h2.page-header= current_user.decorate
 
 = easy_form_for @form, url: my_account_path, label_col: 'col-md-4', control_col: 'col-md-8', html: { id: 'my_account' } do |f|
 
