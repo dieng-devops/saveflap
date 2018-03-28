@@ -5,8 +5,9 @@ class LDAP::Create < Trailblazer::Operation
 
   # rubocop:disable Metrics/MethodLength
   def create!(_options, params:, **)
-    email  = params[:email]
-    emails = params[:emails]
+    email       = params[:email]
+    emails      = params[:emails]
+    description = params[:description]
 
     dn = "cn=#{email}, ou=Customers, dc=fraudbuster, dc=mobi"
 
@@ -14,6 +15,7 @@ class LDAP::Create < Trailblazer::Operation
       cn:   email,
       sn:   email,
       mail: emails,
+      description: description,
       objectclass: %w[top inetOrgPerson],
     }
 

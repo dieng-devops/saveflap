@@ -4,13 +4,15 @@ class LDAP::Update < Trailblazer::Operation
   step :update!
 
   def update!(_options, params:, **)
-    email  = params[:email]
-    emails = params[:emails]
+    email       = params[:email]
+    emails      = params[:emails]
+    description = params[:description]
 
     dn = "cn=#{email}, ou=Customers, dc=fraudbuster, dc=mobi"
 
     ops = [
       [:replace, :mail, emails],
+      [:replace, :description, description]
     ]
 
     instance = LDAPConnector.instance
