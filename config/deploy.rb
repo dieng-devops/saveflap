@@ -17,7 +17,7 @@ set :ssh_options, {
 }
 
 ## RVM
-set :rvm_ruby_version, '2.5.0'
+set :rvm_ruby_version, '2.5.1'
 
 ## Bundler
 set :bundle_flags, '--deployment'
