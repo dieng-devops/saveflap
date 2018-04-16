@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 # Rails
-gem 'rails', '~> 5.1'
+gem 'rails', '5.2.0'
 
 # Configuration
 gem 'dotenv-rails'
