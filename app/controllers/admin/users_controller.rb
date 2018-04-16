@@ -23,7 +23,7 @@ module Admin
 
     def create
       run Admin::Users::Create do |result|
-        return respond_with result['model'], location: -> { admin_users_path }
+        return respond_with result[:model], location: -> { admin_users_path }
       end
       render :new
     end
@@ -36,8 +36,8 @@ module Admin
 
     def update
       run Admin::Users::Update do |result|
-        reload_user_locales if result['model'].id == current_user.id
-        return respond_with result['model'], location: -> { admin_users_path }
+        reload_user_locales if result[:model].id == current_user.id
+        return respond_with result[:model], location: -> { admin_users_path }
       end
       render :edit
     end
@@ -45,7 +45,7 @@ module Admin
 
     def destroy
       run Admin::Users::Delete
-      respond_with result['model'], location: -> { admin_users_path }
+      respond_with result[:model], location: -> { admin_users_path }
     end
 
 
@@ -56,8 +56,8 @@ module Admin
 
     def update_password
       run Admin::Users::Password do |result|
-        sign_in(result['model'], bypass: true) if result['model'].id == current_user.id
-        return respond_with result['model'], location: -> { admin_users_path }
+        sign_in(result[:model], bypass: true) if result[:model].id == current_user.id
+        return respond_with result[:model], location: -> { admin_users_path }
       end
       render :change_password
     end

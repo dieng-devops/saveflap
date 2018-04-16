@@ -6,13 +6,11 @@ describe Admin::Users::Update do
 
   describe 'valid update' do
     it 'should update user' do
-      result =
-        described_class.(
-          id: user.id, user: { first_name: 'Foo' },
-        )
+      params = { id: user.id, user: { first_name: 'Foo' } }
+      result = described_class.(params: params)
 
       expect(result.success?).to be true
-      expect(result['model'].first_name).to eq 'Foo'
+      expect(result[:model].first_name).to eq 'Foo'
     end
   end
 

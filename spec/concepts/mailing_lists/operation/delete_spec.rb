@@ -11,13 +11,11 @@ describe MailingLists::Delete do
   context 'when user is a Commercial' do
     describe 'valid deletion' do
       it 'should soft delete record' do
-        result =
-          described_class.(
-            { id: mailing_list.id },
-          )
+        params = { id: mailing_list.id }
+        result = described_class.(params: params)
 
         expect(result.success?).to be true
-        expect(result['model'].destroyed?).to be true
+        expect(result[:model].destroyed?).to be true
       end
     end
   end

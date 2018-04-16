@@ -15,13 +15,11 @@ describe MailingLists::Update do
         # Stub LDAP::Update on MailingLists update
         stub_operation(LDAP::Update)
 
-        result =
-          described_class.(
-            { id: mailing_list.id, mailing_list: { name: 'bar@bar.com' } },
-          )
+        params = { id: mailing_list.id, mailing_list: { name: 'bar@bar.com' } }
+        result = described_class.(params: params)
 
         expect(result.success?).to be true
-        expect(result['model'].name).to eq 'bar@bar.com'
+        expect(result[:model].name).to eq 'bar@bar.com'
       end
     end
   end

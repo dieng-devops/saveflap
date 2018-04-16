@@ -23,7 +23,7 @@ class MailingListsController < ApplicationController
 
   def create
     run MailingLists::Create do |result|
-      return respond_with result['model'], location: -> { mailing_lists_path }
+      return respond_with result[:model], location: -> { mailing_lists_path }
     end
     render :new
   end
@@ -36,7 +36,7 @@ class MailingListsController < ApplicationController
 
   def update
     run MailingLists::Update do |result|
-      return respond_with result['model'], location: -> { mailing_lists_path }
+      return respond_with result[:model], location: -> { mailing_lists_path }
     end
     render :edit
   end
@@ -44,7 +44,7 @@ class MailingListsController < ApplicationController
 
   def destroy
     run MailingLists::Delete
-    respond_with result['model'], location: -> { mailing_lists_path }
+    respond_with result[:model], location: -> { mailing_lists_path }
   end
 
 end

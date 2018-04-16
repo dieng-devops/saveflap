@@ -25,7 +25,7 @@ class Trailblazer::Operation
   module Policy
     module Pundit
 
-      def self.Params(policy_class, key:, method: :permitted_attributes, name: :default)
+      def self.Params(policy_class, key:, method: :permitted_attributes, name: :attributes)
         Policy.step Params.build(policy_class, key, method), name: name
       end
 
@@ -41,20 +41,20 @@ class Trailblazer::Operation
           end
 
 
-          def call(_input, options)
-            if options['params'].respond_to?(:require)
-              policy = build_policy(options)
-              params = options['params'].require(@key.to_sym).permit(*policy.public_send(@method))
-              options['params'][@key.to_s] = params
-            end
+          def call((options), *)
+            policy = build_policy(options)
+            params = options[:params]
+            params = ActionController::Parameters.new(params) if params.is_a?(Hash)
+            params = params.require(@key.to_sym).permit(*policy.public_send(@method))
+            options[:params][@key.to_s] = params
             Result.new(true, {})
           end
 
           private
 
-          def build_policy(options)
-            @policy_class.new(options['current_user'], options['model'])
-          end
+            def build_policy(options)
+              @policy_class.new(options[:current_user], options[:model])
+            end
         end
 
       end
@@ -80,14 +80,11 @@ module Flap
     # (useless and break form attributes translations)
     # See: https://github.com/trailblazer/trailblazer-rails/blob/master/lib/trailblazer/rails/controller.rb
     module TrailblazerPatch
-      def run(operation, params=self.params, *dependencies)
-        result = operation.(
-          _run_params(params),
-          *_run_runtime_options(*dependencies)
-        )
+      def run(operation, *dependencies)
+        result = operation.({ params: _run_params(self.params) }.merge(*_run_runtime_options(*dependencies)))
 
         @form  = result['contract.default']
-        @model = result['model']
+        @model = result[:model]
 
         yield(result) if result.success? && block_given?
 

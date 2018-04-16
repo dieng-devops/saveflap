@@ -6,13 +6,11 @@ describe Admin::Users::Delete do
 
   describe 'valid deletion' do
     it 'should delete user' do
-      result =
-        described_class.(
-          id: user.id,
-        )
+      params = { id: user.id }
+      result = described_class.(params: params)
 
       expect(result.success?).to be true
-      expect(result['model'].destroyed?).to be true
+      expect(result[:model].destroyed?).to be true
     end
   end
 end

@@ -17,9 +17,11 @@ class MailingLists::Update < Trailblazer::Operation
   def update_ldap!(_options, model:, **)
     if model.saved_change_to_email?
       old_email = model.previous_changes[:email].first
-      LDAP::Rename.(old_email: old_email, new_email: model.email)
+      params = { old_email: old_email, new_email: model.email }
+      LDAP::Rename.(params: params)
     else
-      LDAP::Update.(email: model.email, emails: model.emails.map(&:email), description: model.name)
+      params = { email: model.email, emails: model.emails.map(&:email), description: model.name }
+      LDAP::Update.(params: params)
     end
   end
 end

@@ -11,6 +11,7 @@ class MailingLists::Delete < Trailblazer::Operation
   end
 
   def update_ldap!(_options, model:, **)
-    LDAP::Delete.(email: model.email)
+    params = { email: model.email }
+    LDAP::Delete.(params: params)
   end
 end

@@ -67,7 +67,7 @@ gem 'tzinfo'
 gem 'bootsnap'
 
 # Trailblazer
-gem 'trailblazer-rails', '1.0.4'
+gem 'trailblazer-rails'
 
 # Form objects
 gem 'actionform', git: 'https://github.com/jbox-web/actionform.git', require: 'action_form'
