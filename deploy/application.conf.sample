@@ -1,5 +1,4 @@
 # Rails vars
-RAILS_ENV=production
 SECRET_KEY_BASE=<GENERATED SECRET KEY (length: 128)>
 
 # Database config
@@ -32,6 +31,12 @@ MAIL_FROM=
 MAIL_ON_APPLICATION_ERROR=admin@flap.com
 STATUS_PAGE_USER=admin
 STATUS_PAGE_PASS=admin
+
+# LDAP config
+LDAP_HOST=
+LDAP_PORT=
+LDAP_USER=
+LDAP_PASS=
 
 # Puma (dev mode)
 # WEB_CONCURRENCY=1
