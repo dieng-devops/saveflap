@@ -12,9 +12,6 @@ services:
   redis:
     image: redis:4.0-alpine
 
-  syslog:
-    image: balabit/syslog-ng:latest
-
   web:
     build: .
     env_file:
