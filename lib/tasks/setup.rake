@@ -19,7 +19,7 @@ namespace :app do
 
       if User.find_by_email('admin@example.net').nil?
         puts 'Create Admin user ...'
-        result = Admin::Users::Create.(user: options)
+        result = Admin::Users::Create.(params: {user: options})
         if result.success?
           puts 'Done!'
           puts

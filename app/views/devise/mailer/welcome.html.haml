@@ -1,4 +1,4 @@
-%h4.header= t('.hi', name: @resource.to_s)
+%h4.header= t('.hi', name: @resource.decorate.to_s)
 %p= t('.account_created', app_name: t('app.name'))
 %p= t('.login_html', login: @resource.email)
 %p= t('.password_html', password: @password)

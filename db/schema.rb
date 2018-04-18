@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314145651) do
+ActiveRecord::Schema.define(version: 2018_03_14_145651) do
 
-  create_table "emails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "emails", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "mailing_list_id"
     t.string "email"
     t.string "first_name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180314145651) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mailing_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "mailing_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.boolean "enabled", default: true
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180314145651) do
     t.index ["email"], name: "index_mailing_lists_on_email", unique: true
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
