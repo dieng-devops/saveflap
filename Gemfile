@@ -134,7 +134,7 @@ group :test, :development do
   gem 'database_cleaner'
 
   gem 'capybara'
-  gem 'capybara-screenshot', git: 'https://github.com/n-rodriguez/capybara-screenshot.git'
+  gem 'capybara-screenshot'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 

@@ -9,7 +9,7 @@ module MailingLists::Contract
     attribute :description
     attribute :enabled
 
-    validates :email, format: { with: ApplicationRecord::VALID_EMAIL_REGEX }
+    validates :email, format: { with: ApplicationRecord::VALID_EMAIL_REGEX && /@external\.fraudbuster\.mobi/}
 
     association :emails do
       attributes :first_name, required: true
