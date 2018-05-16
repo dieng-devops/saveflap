@@ -6,14 +6,6 @@ GIT
       rails (>= 4.2)
 
 GIT
-  remote: https://github.com/n-rodriguez/capybara-screenshot.git
-  revision: 6018e0abd048ba422df90479ae72bd9ec911e9b4
-  specs:
-    capybara-screenshot (1.0.18)
-      capybara (>= 1.0, < 4)
-      launchy
-
-GIT
   remote: https://github.com/trailblazer/trailblazer-test.git
   revision: 4705f3758962e4a5556b0e3dbd736ab2f6a6cadb
   specs:
@@ -129,6 +121,9 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.0)
+    capybara-screenshot (1.0.21)
+      capybara (>= 1.0, < 4)
+      launchy
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
@@ -601,7 +596,7 @@ DEPENDENCIES
   capistrano-scm-gitcopy
   capistrano-template
   capybara
-  capybara-screenshot!
+  capybara-screenshot
   chromedriver-helper
   coffee-rails
   database_cleaner
