@@ -7,7 +7,7 @@
         = easy_form_for @form, label_col: 'col-md-2', control_col: 'col-md-10' do |f|
 
           = f.text_field :name,  required: true
-          = f.text_field :email, required: true, value: '@external.fraudbuster.mobi'
+          = f.text_field :email, required: true
           = f.text_area  :description, rows: 5
           = f.form_group do
             = f.check_box :enabled, label: MailingList.human_attribute_name('enabled')
