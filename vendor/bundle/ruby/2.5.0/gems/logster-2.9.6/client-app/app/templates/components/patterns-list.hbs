@@ -1,0 +1,44 @@
+{{#if mutable}}
+  <button {{action "create"}} class="btn new-pattern">{{fa-icon "plus"}}<span>New</span></button>
+{{/if}}
+{{#each allPatterns as |pattern|}}
+  <div class="pattern-wrapper">
+    {{input
+      type="textfield"
+      class="pattern-input"
+      placeholder="Enter regular expression…"
+      value=pattern.valueBuffer
+      disabled=(or immutable pattern.saving)
+    }}
+    {{#if mutable}}
+      {{#if pattern.hasBuffer}}
+        <button {{action "save" pattern}} disabled={{pattern.saving}} class="btn ok no-text save shrink">
+          {{fa-icon "check"}}
+        </button>
+      {{/if}}
+      <button {{action "trash" pattern}} disabled={{pattern.saving}} class="btn no-text trash shrink">
+        {{fa-icon "trash-alt"}}
+      </button>
+    {{/if}}
+
+    {{#if showCounter}}
+      <input disabled=true title="Number of logs that have been suppressed by this pattern" class="count shrink" value={{pattern.count}}>
+      <button {{action "resetCount" pattern}} class="btn no-text reset shrink" title="Reset count of suppressed logs" disabled={{pattern.zeroCount}}>
+        {{fa-icon "redo-alt"}}
+      </button>
+    {{/if}}
+  </div>
+  {{#if applyRetroactivelyCheckbox}}
+    {{#if pattern.isNew}}
+      <div class="retro-checkbox">
+        <input checked={{pattern.retroactive}} type="checkbox" class="checkbox" onclick={{action "checkboxChanged" pattern}}>
+        Apply retroactively
+      </div>
+    {{/if}}
+  {{/if}}
+  {{~#if pattern.error~}}
+    <pre class="api-error">
+      {{~pattern.error~}}
+    </pre>
+  {{~/if~}}
+{{/each}}

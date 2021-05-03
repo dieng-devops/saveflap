@@ -1,0 +1,8 @@
+{{#if isEnvArray}}
+  {{page-nav
+    list=message.env
+    position=currentEnvPosition
+    extraClasses="env-nav"
+    navigate=envChangedAction}}
+{{/if}}
+{{{html}}}

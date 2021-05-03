@@ -1,0 +1,39 @@
+(function() {
+  var lastReport = null;
+
+  if (!window.Logster) {
+    window.Logster = {
+      enabled: true
+    };
+  }
+
+  window.onerror = function(message, url, line, column, errorObj) {
+    // never bother reporting more than once a minute
+    if (lastReport && new Date() - lastReport < 1000 * 60) {
+      return;
+    }
+    if (!Logster.enabled) {
+      return;
+    }
+
+    lastReport = new Date();
+
+    var err = {
+      message: message,
+      url: url,
+      line: line,
+      column: column,
+      window_location: window.location && (window.location + "")
+    };
+
+    if (errorObj && errorObj.stack) {
+      err.stacktrace = errorObj.stack;
+    }
+
+    $.ajax("<%= Logster.config.subdirectory %>" + "/report_js_error", {
+      data: err,
+      type: "POST",
+      cache: false
+    });
+  };
+})();

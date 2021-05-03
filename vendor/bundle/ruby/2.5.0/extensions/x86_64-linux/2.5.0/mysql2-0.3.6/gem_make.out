@@ -1,0 +1,56 @@
+current directory: /home/adieng/flap/vendor/bundle/ruby/2.5.0/gems/mysql2-0.3.6/ext/mysql2
+/usr/local/rvm/rubies/ruby-2.5.1/bin/ruby -I /usr/local/rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20210311-20016-tl23gc.rb extconf.rb
+checking for rb_thread_blocking_region()... no
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for mysqld_error.h... yes
+creating Makefile
+
+current directory: /home/adieng/flap/vendor/bundle/ruby/2.5.0/gems/mysql2-0.3.6/ext/mysql2
+make "DESTDIR=" clean
+
+current directory: /home/adieng/flap/vendor/bundle/ruby/2.5.0/gems/mysql2-0.3.6/ext/mysql2
+make "DESTDIR="
+compiling client.c
+In file included from ./mysql2_ext.h:19,
+                 from client.c:1:
+/usr/include/mariadb/mysql_com.h:3:2: warning: #warning This file should not be included by clients, include only <mysql.h> [-Wcpp]
+ #warning This file should not be included by clients, include only <mysql.h>
+  ^~~~~~~
+In file included from ./client.h:11,
+                 from ./mysql2_ext.h:39,
+                 from client.c:1:
+/usr/local/rvm/rubies/ruby-2.5.1/include/ruby-2.5.0/ruby/backward/rubysig.h:14:2: warning: #warning rubysig.h is obsolete [-Wcpp]
+ #warning rubysig.h is obsolete
+  ^~~~~~~
+In file included from ./mysql2_ext.h:39,
+                 from client.c:1:
+./client.h: In function ‘rb_thread_blocking_region’:
+./client.h:23:3: error: ‘TRAP_BEG’ undeclared (first use in this function)
+   TRAP_BEG;
+   ^~~~~~~~
+./client.h:23:3: note: each undeclared identifier is reported only once for each function it appears in
+./client.h:25:3: error: ‘TRAP_END’ undeclared (first use in this function); did you mean ‘FAPPEND’?
+   TRAP_END;
+   ^~~~~~~~
+   FAPPEND
+client.c: In function ‘rb_raise_mysql2_error’:
+client.c:94:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE e = rb_exc_new3(cMysql2Error, rb_error_msg);
+   ^~~~~
+client.c: In function ‘do_query’:
+client.c:374:14: warning: implicit declaration of function ‘rb_thread_select’; did you mean ‘rb_thread_fd_select’? [-Wimplicit-function-declaration]
+     retval = rb_thread_select(fd_set_fd + 1, &fdset, NULL, NULL, tvp);
+              ^~~~~~~~~~~~~~~~
+              rb_thread_fd_select
+client.c: In function ‘rb_mysql_client_socket’:
+client.c:576:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   int fd_set_fd = wrapper->client->net.fd;
+   ^~~
+client.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+make: *** [Makefile:242: client.o] Error 1
+
+make failed, exit code 2

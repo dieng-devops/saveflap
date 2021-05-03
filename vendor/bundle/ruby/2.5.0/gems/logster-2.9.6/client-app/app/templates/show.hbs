@@ -1,0 +1,9 @@
+{{#link-to 'index'}}Recent{{/link-to}}
+<div id="bottom-panel" class="full">
+  {{message-info
+    currentMessage=model
+    showTitle="true"
+    envChangedAction=(action "envChanged")
+    currentEnvPosition=envPosition
+    actionsInMenu=false}}
+</div>

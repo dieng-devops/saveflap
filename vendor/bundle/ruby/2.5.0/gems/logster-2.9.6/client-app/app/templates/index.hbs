@@ -1,0 +1,103 @@
+<div id='top-panel'>
+  <div id="log-table">
+    {{#if model.moreBefore}}
+      <div {{action "showMoreBefore"}} class="show-more">
+        {{#if model.hideCountInLoadMore}}
+          Load more
+        {{else}}
+          Select to see {{model.totalBefore}} more
+        {{/if}}
+      </div>
+    {{/if}}
+    {{#each model.rows as |row|}}
+      {{message-row model=row selectRow=(action "selectRowAction" row)}}
+    {{/each}}
+  </div>
+</div>
+<div id="bottom-panel" class="{{if model.currentRow.group "group-view"}}">
+  {{#if model.currentRow.group}}
+    {{page-nav
+      list=model.currentRow.messages
+      position=model.currentGroupedMessagesPosition
+      extraClasses="group-nav"
+      navigate=(action "groupedMessageChangedAction")}}
+  {{/if}}
+  {{message-info
+    currentMessage=model.currentMessage
+    currentRow=model.currentRow
+    loadingEnv=model.loadingEnv
+    removeMessage=(action "removeMessage")
+    solveMessage=(action "solveMessage")
+    onTabChange=(action "tabChangedAction")
+    envChangedAction=(action "envChangedAction")
+    currentEnvPosition=model.currentEnvPosition
+    actionsInMenu=actionsInMenu
+    showShare=true}}
+
+  <div class="action-panel">
+    <div class="severity-filters">
+    <div class="more-wrapping">
+      <label class="debug">
+        <input
+          type="checkbox"
+          checked={{showDebug}}
+          onchange={{action (action 'updateFilter' 'showDebug')}}
+        />
+        <span>Debug</span>
+      </label>
+      <label class="info">
+        <input
+          type="checkbox"
+          checked={{showInfo}}
+          onchange={{action (action 'updateFilter' 'showInfo')}}
+        />
+        <span>Info</span>
+      </label>
+      <label class="warn">
+        <input
+          type="checkbox"
+          checked={{showWarn}}
+          onchange={{action (action 'updateFilter' 'showWarn')}}
+        />
+        {{fa-icon "exclamation-circle" class="warning"}}
+        <span>Warning</span>
+      </label>
+      <label class="error">
+        <input
+          type="checkbox"
+          checked={{showErr}}
+          onchange={{action (action 'updateFilter' 'showErr')}}
+        />
+        {{fa-icon "times-circle" class="error"}}
+        <span>Error</span>
+      </label>
+      <label class="fatal">
+        <input
+          type="checkbox"
+          checked={{showFatal}}
+          onchange={{action (action 'updateFilter' 'showFatal')}}
+        />
+        {{fa-icon "times-circle" class="fatal"}}
+        <span>Fatal</span>
+      </label>
+    </div>
+    </div>
+    <div class="search-clear-all">
+      <input
+        type="text"
+        class="search"
+        placeholder="Search"
+        onkeyup={{action "updateSearch" value="target.value"}}
+      />
+      <div class="footer-btns">
+        {{#if showSettings}}
+          {{#link-to "settings" class="settings btn no-text"}}
+            {{fa-icon "cog"}}
+          {{/link-to}}
+        {{/if}}
+        <button class="clear btn danger" {{action "clear"}}>{{fa-icon "trash-alt" prefix="far"}}<span>Clear logs</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+{{panel-resizer}}

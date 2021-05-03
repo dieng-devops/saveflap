@@ -20,7 +20,7 @@ REDIS_DB_MAP = %w[
 module Flap
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    #config.load_defaults 5.1
 
     # Locales
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]

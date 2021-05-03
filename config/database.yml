@@ -9,13 +9,17 @@ db_config: &db_config
 
 production:
   <<: *db_config
+  database: flap
 
 staging:
   <<: *db_config
+  database: flap
 
 development:
   <<: *db_config
+  database: flap
 
 test:
   <<: *db_config
-  database: <%= "#{ENV['DB_NAME']}_test" %>
+  database: flap
+  # database: <%= "#{ENV['DB_NAME']}_test" %>

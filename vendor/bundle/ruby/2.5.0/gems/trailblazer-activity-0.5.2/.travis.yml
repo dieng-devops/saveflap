@@ -1,0 +1,14 @@
+sudo: false
+language: ruby
+rvm:
+  # - 2.0
+  - 2.1
+  - 2.2
+  - 2.3.3
+  - 2.4.3
+  - 2.5.0
+matrix:
+  include:
+  - rvm: jruby-head
+    env: JRUBY_OPTS="--profile.api"
+before_install: gem install bundler

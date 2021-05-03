@@ -1,0 +1,12 @@
+language: ruby
+matrix:
+  include:
+  - rvm: 2.4.1
+    env: TEST_SUITE=rails5.0
+    gemfile: test/rails5.0/Gemfile
+
+  - rvm: 2.4.1
+    env: TEST_SUITE=rails5.1
+    gemfile: test/rails5.1/Gemfile
+
+script: cd test/$TEST_SUITE && bundle exec rake test

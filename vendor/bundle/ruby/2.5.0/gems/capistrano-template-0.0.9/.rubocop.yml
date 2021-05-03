@@ -1,0 +1,25 @@
+
+inherit_from: .rubocop_todo.yml
+
+
+LineLength:
+  Max: 160
+
+Documentation:
+  Enabled: false
+
+ParameterLists:
+  Max: 15
+
+MethodLength:
+  Max: 50
+
+RegexpLiteral:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'spec/dummy_app/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 2.0

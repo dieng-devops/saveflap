@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled 
+ce19b05ff6a3fdccd96ac52ccfb6e5f74fa10608 refs/heads/gh-pages
+93f9b8373b9a1bba6a87e61a68575fad93180f71 refs/heads/master
+36a14c00d7c4af4650b76982d385001682029bf6 refs/tags/1.0.0

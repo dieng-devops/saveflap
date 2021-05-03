@@ -10,6 +10,8 @@ class LDAPConnector
   def initialize(opts = {})
     @opts = opts
     @ldap = ldap_connection
+    puts @ldap.inspect
+    puts "==================================="
   end
 
 
@@ -18,12 +20,15 @@ class LDAPConnector
     # rubocop:disable Metrics/MethodLength
     def instance
       return @instance if @instance
-      @instance =
-        new({
+       @instance = new({
           host: Settings.ldap_host,
           port: Settings.ldap_port,
+          base: 'ou=people,dc=fraudbuster,dc=mobi',
           encryption: {
-            method: :start_tls,
+            method: :simple_tls,
+            tls_options: {
+               ca_file: '/etc/ssl/certs/fraudbuster_wildcard.pem',
+               ssl_version: 'TLSv1_1' }
           },
           auth: {
             method: :simple,
